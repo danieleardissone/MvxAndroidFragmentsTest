@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_root"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!-- android:background="@drawable/background_view" -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <include
+            android:id="@+id/top_toolbar"
+            layout="@layout/toolbar_top" />
+    </RelativeLayout>
+<!-- Footer aligned to bottom -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:gravity="center">
+        <include
+            android:id="@+id/bottom_toolbar"
+            layout="@layout/toolbar_bottom" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="@dimen/spacing_largest"
+        android:paddingLeft="@dimen/spacing_largest"
+        android:paddingRight="@dimen/spacing_largest">
+        <ImageView
+            android:id="@+id/imgLogoMenu"
+            local:MvxBind="Bitmap ByteArrayBitmap(Customer.Logo)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_height_short" />
+    <!-- android:src="@drawable/NavService_Logo_Menu" -->
+        <TextView
+            local:MvxBind="Text LastSync; Typeface StringToFont('semiboldit')"
+            android:id="@+id/txtLastSync"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_height_normal">
+            <Mvx.MvxListView
+                android:layout_centerInParent="true"
+                android:divider="@color/black"
+                android:dividerHeight="1dp"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="@dimen/menu_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/MenuItemMvxListView"
+                local:MvxBind="ItemsSource MenuItemList; Visibility Visibility(MenuItemList.Count); ItemClick ItemSelectedCommand"
+                local:MvxItemTemplate="@layout/menuviewitem" />
+        <!-- android:text="Powered by Novus SI srl" -->
+        <!-- android:layout_marginTop="@dimen/button_height_taller" -->
+        <!--<LinearLayout
+                android:layout_below="@id/MenuItemMvxListView"
+                android:orientation="vertical"
+                android:id="@+id/CustomerBusinessNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    local:MvxBind="Text Customer.BusinessName; Typeface StringToFont('semiboldit')"
+                    android:id="@+id/CustomerBusinessName"
+                    android:maxLines="20"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_normal"
+                    android:ellipsize="end"
+                    android:gravity="center|bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/spacing_small" />
+            </LinearLayout>-->
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

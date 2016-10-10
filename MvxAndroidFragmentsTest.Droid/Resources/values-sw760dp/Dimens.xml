@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+<dimen name="Button_Search_Margin_Top">845dp</dimen>
+ <dimen name="Notepadding_hour_edit_add">690dp</dimen>
+    <dimen name="Notepadding_material_edit_add">620dp</dimen>
+	<dimen name="button_alignment_padding2">560dp</dimen>
+	<dimen name="login_logo_height">316.4dp</dimen>
+	<dimen name="login_logo_width">661.6dp</dimen>
+	<dimen name="login_logo_margin_top">120dp</dimen>
+	<dimen name="login_logo_margin_bottom">30dp</dimen>
+	<dimen name="login_button_padding">80dp</dimen>
+	<dimen name="datepicker_padding">50dp</dimen>
+	<dimen name="padding_filter">30dp</dimen>
+	<dimen name="login_padding">100dp</dimen>   
+	<dimen name="lists_pad">550dp</dimen>
+	<dimen name="datepickers_padding_top">200dp</dimen>
+	<dimen name="container_button_width">267dp</dimen>
+	<dimen name="textfield_height">40dp</dimen>
+	<dimen name="textfield_width">380dp</dimen>
+	<dimen name="searchview_width">545dp</dimen>
+	<dimen name="filters_text_height">50dp</dimen>
+	<dimen name="filters_text_width">500dp</dimen>
+	<dimen name="container_padding">120dp</dimen>
+	<dimen name="button_height">60dp</dimen>
+	<dimen name="filter_textView_spacing">120dp</dimen>
+	<dimen name="button_odl_detail_size">150dp</dimen>
+	<dimen name="error_message_pad">200dp</dimen>
+	<dimen name="error_message_pad_dialog">80dp</dimen>
+	<dimen name="listviewing">770dp</dimen>
+	<dimen name="listviewing_nodl">670dp</dimen>
+	<dimen name="detailviewing_list">570dp</dimen>
+	<dimen name="menu_width">550dp</dimen>
+</resources>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+	<style name="CustomBottomToolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+		<item name="android:padding">0dp</item>
+		<item name="android:layout_margin">0dp</item>
+	</style>
+
+	<style name="DividerBlack">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">2dp</item>
+    <item name="android:background">@color/black</item>
+	</style>
+	<style name="DividerBlackVertical">
+    <item name="android:layout_width">2dp</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:background">@color/black</item>
+	</style>
+
+	<style name="DividerBlue">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">3dp</item>
+    <item name="android:background">@color/novus_lightblue</item>
+	</style>
+
+	<style name="DividerGrey">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:background">@color/dark_gray</item>
+	</style>
+
+
+
+	<!-- <item name="android:paddingTop">@dimen/spacing_normal</item>
+	<item name="android:background">?android:attr/listDivider</item> -->
+
+</resources>

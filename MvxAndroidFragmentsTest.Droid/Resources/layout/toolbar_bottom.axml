@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Novusmobile.Droid.Helpers.CustomSplitToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    local:contentInsetLeft="0dp"
+    local:contentInsetStart="0dp"
+    android:padding="0dp"
+    android:layout_margin="0dp"
+    android:layout_height="?actionBarSize"
+    android:layout_width="match_parent"
+    android:minHeight="?actionBarSize"
+    android:background="@drawable/bottombar_background"
+    local:theme="@style/CustomBottomToolbar" />

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+<!-- android:background="@drawable/background_view" -->
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:paddingTop="@dimen/spacing_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/spacing_normal">
+        <TextView
+            local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+            android:id="@+id/lblTitle"
+            android:textSize="@dimen/font_larger"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" />
+    </LinearLayout>
+    <View
+        style="@style/DividerBlack"
+        android:id="@+id/view1"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal" />
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:layout_marginTop="@dimen/spacing_smaller"
+            local:MvxBind="Typeface StringToFont('bold')"
+            android:layout_marginLeft="15dp"
+            android:text="@string/costadd_date"
+            android:textSize="@dimen/font_large"
+            android:id="@+id/textView2"
+            android:textColor="@color/black"
+            android:layout_width="200dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginTop="@dimen/spacing_smaller"
+            android:layout_marginLeft="10dp"
+            android:layout_width="160dp"
+            local:MvxBind="Typeface StringToFont('regular')"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_large"
+            android:layout_height="wrap_content"
+            android:id="@+id/DateHourMr" />
+        <ImageButton
+            android:layout_marginLeft="@dimen/button_height_short"
+            android:background="@null"
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ChangeDateBtn"
+            android:src="@drawable/button_calendar"
+            android:layout_marginTop="@dimen/spacing_smaller" />
+        <ImageButton
+            local:MvxBind="Click SetTodayCommand"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:background="@null"
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/SetTodayBtn"
+            android:src="@drawable/button_oggi"
+            android:layout_marginTop="@dimen/spacing_smaller" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:paddingRight="@dimen/spacing_normal">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1">
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/costCodeLinearLayout">
+                <TextView
+                    local:MvxBind="Typeface StringToFont('bold')"
+                    android:textColor="@color/black"
+                    android:text="@string/cost_choose"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/font_large"
+                    android:id="@+id/txtCostCodeTitle"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    local:MvxBind="Text CostType.Code; Error EnumerableString(Errors['CostType.Code']); Typeface StringToFont('regular')"
+                    android:text=""
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/font_large"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/txtCostCode"
+                    android:textColor="@color/black" />
+                <ImageButton
+                    android:background="@null"
+                    android:text=""
+                    android:layout_marginLeft="65dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/CostTypeSearch"
+                    android:src="@drawable/button_search" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout3"
+                android:layout_marginLeft="210dp">
+                <TextView
+                    local:MvxBind="Text CostType.Description; Typeface StringToFont('regular')"
+                    android:text=""
+                    android:textSize="@dimen/font_large"
+                    android:id="@+id/txtCostDescription"
+                    android:textColor="@color/dark_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4">
+            <TextView
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:text="@string/unit_cost"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1" />
+            <EditText
+                android:layout_marginLeft="10dp"
+                local:MvxBind="Text UnitCost; Typeface StringToFont('regular')"
+                android:text=""
+                android:inputType="numberDecimal"
+                android:maxLength="9"
+                android:digits="0123456789,."
+                android:background="@drawable/edittext_background"
+                android:textSize="@dimen/font_large"
+                android:id="@+id/txtUnitCost"
+                android:textColor="@color/black"
+                android:layout_width="80dp"
+                android:layout_height="match_parent" />
+            <TextView
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:text="€"
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1" />
+        </LinearLayout>
+        <LinearLayout
+            local:MvxBind="Visibility Adding, Converter=InvertedVisibility"
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout14"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:text="@string/PrevQuantity"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large"
+                local:MvxBind="Text Quantity; Typeface StringToFont('regular')"
+                android:text=""
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            local:MvxBind="Visibility Adding, Converter=InvertedVisibility"
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout13"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:text="@string/usedquantity"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large"
+                local:MvxBind="Text UsedQty; Typeface StringToFont('regular')"
+                android:text=""
+                android:id="@+id/Data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout16"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+            <TextView
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:text="@string/qty"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <EditText
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginLeft="10dp"
+                    local:MvxBind="Text QtyToWithdraw; Typeface StringToFont('regular')"
+                    android:textSize="@dimen/font_large"
+                    android:inputType="number"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText3"
+                    android:layout_marginTop="10dp" />
+                <ImageButton
+                    android:layout_marginLeft="130dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/button_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton3"
+                    local:MvxBind="Click SetAddOneQtyToWithdrawCommand" />
+                <ImageButton
+                    local:MvxBind="Click SetRemoveOneQtyToWithdrawCommand"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/button_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton4" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout13"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:text="@string/TotalCost"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large"
+                local:MvxBind="Text TotalCost; Typeface StringToFont('regular')"
+                android:text=""
+                android:id="@+id/Data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:text="€"
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginTop="10dp"
+        local:MvxBind="Typeface StringToFont('bold')"
+        android:text="@string/note_label"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <EditText
+        android:padding="@dimen/spacing_normal"
+        local:MvxBind="Text Comment; Typeface StringToFont('regular')"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/edittext_background_grey"
+        android:textColor="@color/black"
+        android:hint="Aggiungi qui le note"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:drawablePadding="10sp"
+        android:textColorHint="@drawable/hint_selector"
+        android:gravity="top|left"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/editText2"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
+</LinearLayout>

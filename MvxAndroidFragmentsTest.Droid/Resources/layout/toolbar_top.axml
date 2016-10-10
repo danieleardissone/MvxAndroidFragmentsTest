@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_height="?actionBarSize"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:minHeight="?actionBarSize"
+    android:background="@drawable/actionbar_background"
+    local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+<!-- android:background="@drawable/actionbar_background" -->
+<!--local:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+<!-- Topbar mynewholland logo -->
+<!--    
+android:logo="@drawable/actionbar_logo"
+
+<ImageView
+        android:id="@+id/top_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:src="@drawable/ic_launcher_main_resize" />-->
+<!-- Below will add your text in the center of toolbar -->
+    <TextView
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="@color/novus_lightblue"
+        android:textSize="@dimen/font_larger"
+        android:textStyle="bold"
+        android:drawablePadding="@dimen/spacing_smallest" />
+    <SearchView
+        android:queryHint="@string/odllist_search_hint"
+        local:MvxBind="Typeface StringToFont('regular')"
+        android:visibility="invisible"
+        android:id="@+id/search_view"
+        android:minWidth="25px"
+        android:iconifiedByDefault="false"
+        android:minHeight="25px"
+        android:background="@drawable/edittext_background_grey"
+        android:layout_width="@dimen/searchview_width"
+        android:layout_height="@dimen/textfield_height"
+        android:layout_gravity="center"
+        android:textSize="@dimen/font_normal" />
+<!--
+        android:background="@drawable/edittext_background_orangedark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"-->
+</android.support.v7.widget.Toolbar>

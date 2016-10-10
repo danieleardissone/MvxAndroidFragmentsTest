@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/spacing_small"
+    android:layout_margin="@dimen/spacing_small"
+    android:minWidth="350dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1">
+            <TextView
+                android:text="Cambia Data"
+                android:id="@+id/lblTitle"
+                android:textSize="@dimen/font_larger"
+                android:textColor="@color/novus_lightblue"
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_normal">
+            <View
+                style="@style/DividerBlue" />
+        </LinearLayout>
+        <MvxDatePicker
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:textSize="1dp"
+            android:id="@+id/mvxDatePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <MvxTimePicker
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:textSize="1dp"
+            android:id="@+id/mvxTimePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <!--             local:MvxBind="Value DateStart" -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:gravity="right"
+            android:minHeight="25px"
+            android:layout_gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+            <Button
+                android:text="Cancel"
+                android:background="@null"
+                android:layout_gravity="left"
+                android:textColor="@color/navservice_lightblue"
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:stateListAnimator="@null" />
+        <!-- android:layout_marginLeft="300dp" -->
+            <Button
+                android:layout_marginLeft="10dp"
+                android:stateListAnimator="@null"
+                android:text="OK"
+                android:background="@null"
+                android:layout_gravity="left"
+                android:textColor="@color/navservice_lightblue"
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnDismiss"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/spacing_smaller"
+        android:layout_marginRight="@dimen/spacing_smaller"
+        android:src="@drawable/ic_close_dialog"
+        android:background="@color/transparent" />
+</RelativeLayout>

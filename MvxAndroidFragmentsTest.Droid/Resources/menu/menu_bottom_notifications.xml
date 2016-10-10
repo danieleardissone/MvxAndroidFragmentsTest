@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/filters"
+	  	android:title="@string/action_filters"
+	  	android:icon="@drawable/ic_menu_filters_selector"
+	  	app:showAsAction="always"/>
+  <item android:id="@+id/notifications"
+        android:title="@string/action_notifications"
+        android:icon="@drawable/ic_menu_notifications_selector"
+        app:showAsAction="always"/>
+        <!-- android:icon="@drawable/ic_menu_notifications_selector" -->
+  <item android:id="@+id/logout"
+	  	android:title="@string/action_logout"
+	  	android:icon="@drawable/ic_menu_logout"
+	  	app:showAsAction="always"/>	
+</menu>
+

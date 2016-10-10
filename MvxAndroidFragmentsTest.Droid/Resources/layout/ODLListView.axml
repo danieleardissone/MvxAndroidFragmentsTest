@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout3"
+        local:MvxBind="Visibility Visibility(ODLList)">
+        <Mvx.MvxListView
+            android:divider="@color/black"
+            android:dividerHeight="1dp"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/ODLMvxListView"
+            local:MvxBind="ItemsSource ODLList; ItemClick ItemSelectedCommand; Visibility Visibility(ODLList.Count)"
+            local:MvxItemTemplate="@layout/odllistviewitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            local:MvxBind="Visibility ODLList.Count, Converter=InvertedVisibility"
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp">
+            <TextView
+                android:gravity="center"
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:text="@string/no_odl_message"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:layout_marginTop="@dimen/error_message_pad" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

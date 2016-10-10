@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!-- android:layout_marginTop="@dimen/spacing_small" -->
+    <LinearLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/linearLayoutTabButtons"
+        android:gravity="fill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/imageView99">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:clickable="true"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout1"
+            android:background="@drawable/ic_tab_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+            <TextView
+                android:id="@+id/btnOrderNumber"
+                android:layout_weight="1"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:background="@color/transparent"
+                android:textColor="@color/ic_tab_textcolor_selector"
+                android:text="@string/odllist_ordernumber"
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="fill" />
+            <Mvx.MvxImageView
+                local:MvxBind="Visibility Visibility(SortNoDesc)"
+                android:src="@drawable/ic_arrow_up_selector"
+                android:id="@+id/imageView1"
+                android:background="@color/transparent"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+            <Mvx.MvxImageView
+                local:MvxBind="Visibility SortNoDesc, Converter=InvertedVisibility"
+                android:src="@drawable/ic_arrow_down_selector"
+                android:background="@color/transparent"
+                android:id="@+id/imageView6"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:clickable="true"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout2"
+            android:background="@drawable/ic_tab_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+            <TextView
+                android:id="@+id/btnOrderDate"
+                android:layout_weight="1"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:background="@drawable/ic_tab_selector"
+                android:text="@string/odllist_orderdate"
+                android:textColor="@color/ic_tab_textcolor_selector"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                local:MvxBind="Typeface StringToFont('regular')" />
+            <Mvx.MvxImageView
+                local:MvxBind="Visibility Visibility(SortDateDesc)"
+                android:src="@drawable/ic_arrow_up_selector"
+                android:id="@+id/imageView1"
+                android:background="@color/transparent"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+            <Mvx.MvxImageView
+                local:MvxBind="Visibility SortDateDesc, Converter=InvertedVisibility"
+                android:src="@drawable/ic_arrow_down_selector"
+                android:background="@color/transparent"
+                android:id="@+id/imageView6"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:clickable="true"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout3"
+            android:background="@drawable/ic_tab_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+            <TextView
+                android:id="@+id/btnOrderCustomer"
+                android:layout_weight="1"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:background="@drawable/ic_tab_selector"
+                android:text="@string/odllist_ordercustomer"
+                android:textColor="@color/ic_tab_textcolor_selector"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                local:MvxBind="Typeface StringToFont('regular')" />
+            <Mvx.MvxImageView
+                local:MvxBind="Visibility Visibility(SortCustomerDesc)"
+                android:src="@drawable/ic_arrow_up_selector"
+                android:id="@+id/imageView1"
+                android:background="@color/transparent"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+            <Mvx.MvxImageView
+                local:MvxBind="Visibility SortCustomerDesc, Converter=InvertedVisibility"
+                android:src="@drawable/ic_arrow_down_selector"
+                android:background="@color/transparent"
+                android:id="@+id/imageView6"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+<!--<LinearLayout
+        local:MvxBind="Visibility Visibility(IsEmpty)"
+        android:layout_below="@id/top_toolbar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:layout_marginTop="100dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
+    <FrameLayout
+        local:MvxBind="Visibility InvertedVisibility(IsEmpty)"
+        android:id="@+id/content_frame_inner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutTabButtons" />-->
+    <FrameLayout
+        android:id="@+id/content_frame_inner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutTabButtons" />
+</RelativeLayout>

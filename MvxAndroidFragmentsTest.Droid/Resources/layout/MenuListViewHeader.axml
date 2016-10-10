@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_below="@id/header"
+    android:layout_above="@id/footer"
+    android:layout_centerHorizontal="true"
+    android:paddingBottom="@dimen/spacing_largest">
+<!-- android:paddingTop="@dimen/spacing_largest" -->
+    <ImageView
+        android:id="@+id/imgLogoMenu"
+        local:MvxBind="Bitmap ByteArrayBitmap(Customer.Logo)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/button_height_short"
+        android:paddingLeft="@dimen/spacing_largest"
+        android:paddingRight="@dimen/spacing_largest" />
+<!-- android:src="@drawable/NavService_Logo_Menu" -->
+    <TextView
+        local:MvxBind="Text LastSync; Typeface StringToFont('semiboldit')"
+        android:id="@+id/txtLastSync"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_normal"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/button_height_short" />
+<!-- android:layout_marginTop="@dimen/spacing_small" -->
+</LinearLayout>

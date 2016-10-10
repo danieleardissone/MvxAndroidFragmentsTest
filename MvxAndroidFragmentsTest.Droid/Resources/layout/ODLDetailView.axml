@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="@dimen/spacing_normal">
+                <TextView
+                    local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+                    android:id="@+id/lblTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/font_larger"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            <!-- CodOdl + ' del ' + DataSchedulazioneShortString" -->
+            <!--<RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical">
+                    <TextView
+                        local:MvxBind="Text Status; Typeface StringToFont('bold'); Click DoChangeStatusCommand"
+                        android:id="@+id/lblStatus"
+                        android:paddingRight="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>-->
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_small">
+                <View
+                    style="@style/DividerBlack" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    local:MvxBind="Click DoChangeStatusCommand">
+                    <TextView
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:id="@+id/lblStatusEtichetta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Stato: " />
+                    <TextView
+                        local:MvxBind="Text Status; Typeface StringToFont('bold')"
+                        android:id="@+id/lblStatus"
+                        android:paddingRight="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_normal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:id="@+id/lblOperatorEtichetta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="Operatore: " />
+                    <TextView
+                        local:MvxBind="Text AssignedUser; Typeface StringToFont('bold')"
+                        android:id="@+id/lblOperator"
+                        android:paddingRight="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_small">
+                <View
+                    style="@style/DividerBlack" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    local:MvxBind="Text CustomerContact; Typeface StringToFont('regular')"
+                    android:id="@+id/lblContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/font_large"
+                    android:textColor="@color/black" />
+            <!-- android:paddingLeft="@dimen/spacing_small" -->
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_normal">
+                <TextView
+                    local:MvxBind="Text CustomerName; Typeface StringToFont('regular')"
+                    android:id="@+id/lblClient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/font_large"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/spacing_normal">
+                <TextView
+                    local:MvxBind="Text CustomerAddressComplete; Typeface StringToFont('regular')"
+                    android:id="@+id/lblIndirizzo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/font_normal"
+                    android:textColor="@color/dark_gray" />
+            </RelativeLayout>
+        <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_normal">
+                <View
+                    style="@style/DividerBlack" />
+            </LinearLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_normal">
+                <TextView
+                    local:MvxBind="Text Description; Typeface StringToFont('regular')"
+                    android:id="@+id/lblDescrizioneIntervento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/font_large"
+                    android:textColor="@color/black"
+                    android:singleLine="false"
+                    android:paddingBottom="@dimen/spacing_normal" />
+                <TextView
+                    local:MvxBind="Text DamageDescription; Typeface StringToFont('regular')"
+                    android:id="@+id/lblRichiestaPer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/font_normal"
+                    android:textColor="@color/dark_gray"
+                    android:singleLine="false"
+                    android:paddingBottom="@dimen/spacing_normal" />
+                <TextView
+                    local:MvxBind="Text DamageReason; Typeface StringToFont('semiboldit')"
+                    android:id="@+id/lblProbabileCausa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/font_normal"
+                    android:textColor="@color/dark_gray"
+                    android:singleLine="false"
+                    android:textStyle="italic" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/spacing_large"
+                android:paddingBottom="@dimen/spacing_small"
+                android:gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/btnContactClient"
+                    android:src="@drawable/button_contatta"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    local:MvxBind="Click BringMeThereCommand"
+                    android:id="@+id/btnLocalizeClient"
+                    android:src="@drawable/button_naviga"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    local:MvxBind="Click DoShowListaAttivitaCommand"
+                    android:id="@+id/btnAttivita"
+                    android:src="@drawable/button_attivita"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    local:MvxBind="Click DoShowListaMaterialiCommand"
+                    android:id="@+id/btnMateriali"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:src="@drawable/button_materiali"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_small"
+                android:gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/btnOre"
+                    local:MvxBind="Click DoShowHourListCommand"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:src="@drawable/button_ore"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    android:id="@+id/btnCosti"
+                    local:MvxBind="Click DoShowCostListCommand"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:src="@drawable/button_costi"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    local:MvxBind="Click DoShowNoteCommand"
+                    android:id="@+id/btnNote"
+                    android:src="@drawable/button_note"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    android:id="@+id/btnStatus"
+                    local:MvxBind="Click DoChangeStatusCommand"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:src="@drawable/button_status"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/spacing_normal"
+                android:paddingBottom="@dimen/spacing_small"
+                android:paddingLeft="@dimen/spacing_smaller"
+                android:gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/btnDocumenti"
+                    local:MvxBind="Click DoShowDocumentsCommand"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:src="@drawable/button_documenti"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    android:id="@+id/btnFoto"
+                    local:MvxBind="Click DoShowPicturesCommand"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:src="@drawable/button_foto"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    android:id="@+id/btnFirma"
+                    local:MvxBind="Click DoShowSignCommand"
+                    android:src="@drawable/button_firma"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:background="@null"
+                    android:scaleType="fitCenter" />
+                <ImageButton
+                    android:id="@+id/btnInv"
+                    local:MvxBind="Click DoShowSignCommand"
+                    android:src="@drawable/button_firma"
+                    android:paddingRight="@dimen/spacing_normal"
+                    android:layout_width="@dimen/button_odl_detail_size"
+                    android:layout_height="@dimen/button_odl_detail_size"
+                    android:background="@null"
+                    android:visibility="invisible"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

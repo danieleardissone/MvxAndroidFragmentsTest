@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<dimen name="button_alignment_padding2">375dp</dimen>
+	<dimen name="lists_pad">370dp</dimen>
+	<dimen name="button_alignment_padding">250dp</dimen>
+    <dimen name="sig_width">300dp</dimen>
+    <dimen name="sig_height">160dp</dimen>
+    <dimen name="Notepadding_hour_edit_add">490dp</dimen>
+    <dimen name="Notepadding_vacationpermitdescription_edit_add">100dp</dimen>
+    <dimen name="Notepadding_healthservicedocumentno_edit_add">40dp</dimen>
+    <dimen name="Notepadding_noteemployed_edit_add">200dp</dimen>
+    <dimen name="Notepadding_material_edit_add">420dp</dimen>
+    <dimen name="Button_Search_Margin_Top">645dp</dimen>
+    <dimen name="sig_marginLeft">250dp</dimen>
+    <dimen name="sig_marginTop">250dp</dimen>
+    <dimen name="docu_to_sign">550dp</dimen>  
+    <dimen name="login_padding">50dp</dimen>     
+    <dimen name="lists_pad">370dp</dimen>
+	<dimen name="container_button_width">200dp</dimen>
+	<dimen name="login_logo_height">221.48dp</dimen>
+	<dimen name="login_logo_width">463.12dp</dimen>
+	<dimen name="login_logo_margin_top">80dp</dimen>
+	<dimen name="datepickers_padding_top">50dp</dimen>
+	<dimen name="login_logo_margin_bottom">20dp</dimen>
+	<dimen name="login_button_padding">50dp</dimen>
+	<dimen name="datepicker_padding">20dp</dimen>
+	<dimen name="textfield_height">40dp</dimen>
+	<dimen name="textfield_width">300dp</dimen>
+	<dimen name="searchview_width">400dp</dimen>
+	<dimen name="filters_text_height">50dp</dimen>
+	<dimen name="filters_text_width">550dp</dimen>
+	<dimen name="container_padding">60dp</dimen>
+	<dimen name="padding_filter">30dp</dimen>
+	<dimen name="button_height">60dp</dimen>
+	<dimen name="filter_textView_spacing">0dp</dimen>
+	<dimen name="button_odl_detail_size">140dp</dimen>
+	<dimen name="error_message_pad">80dp</dimen>
+	<dimen name="error_message_pad_dialog">80dp</dimen>
+	<dimen name="listviewing">585dp</dimen>
+	<dimen name="listviewing_nodl">520dp</dimen>
+	<dimen name="detailviewing_list">400dp</dimen>
+	<dimen name="menu_width">500dp</dimen>
+
+</resources>

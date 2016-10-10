@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/spacing_small"
+    android:layout_margin="@dimen/spacing_small"
+    android:minWidth="350dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/contactclient_title"
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/font_larger"
+            android:textColor="@color/novus_lightblue"
+            local:MvxBind="Typeface StringToFont('bold')" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_normal">
+            <View
+                style="@style/DividerBlue" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/viewPhone"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_tall"
+            android:clickable="true"
+            android:background="@color/transparent"
+            android:gravity="center_vertical|left"
+            android:layout_marginTop="@dimen/spacing_small">
+            <ImageView
+                android:id="@+id/imgPhone"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_phone" />
+            <TextView
+                android:id="@+id/lblPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:text="@string/contactclient_phone"
+                android:textSize="@dimen/font_larger"
+                android:textColor="@color/black"
+                local:MvxBind="Typeface StringToFont('regular')" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_normal">
+            <View
+                style="@style/DividerGrey" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/viewEmail"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_tall"
+            android:clickable="true"
+            android:background="@color/transparent"
+            android:gravity="center_vertical|left"
+            android:layout_marginTop="@dimen/spacing_small">
+            <ImageView
+                android:id="@+id/imgEmail"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_mail" />
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:text="@string/contactclient_mail"
+                android:textSize="@dimen/font_larger"
+                android:textColor="@color/black"
+                local:MvxBind="Typeface StringToFont('regular')" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnDismiss"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/spacing_smaller"
+        android:layout_marginRight="@dimen/spacing_smaller"
+        android:src="@drawable/ic_close_dialog"
+        android:background="@color/transparent" />
+</RelativeLayout>

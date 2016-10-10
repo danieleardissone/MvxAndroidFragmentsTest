@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:minWidth="25px"
+    android:minHeight="25px">
+<!-- android:background="@drawable/background_view" -->
+    <LinearLayout
+        android:paddingTop="@dimen/spacing_normal"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/spacing_normal">
+        <TextView
+            local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+            android:id="@+id/lblTitle"
+            android:textSize="@dimen/font_larger"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" />
+    </LinearLayout>
+    <View
+        style="@style/DividerBlack"
+        android:id="@+id/view1"
+        android:layout_marginLeft="@dimen/spacing_normal"
+        android:layout_marginRight="@dimen/spacing_normal" />
+    <EditText
+        local:MvxBind="Text CommentToSave, Typeface StringToFont('regular')"
+        android:id="@+id/etTweetReview"
+        android:background="@drawable/edittext_background_grey"
+        android:ems="10"
+        android:hint="Note"
+        android:textColorHint="@drawable/hint_selector"
+        android:drawablePadding="50sp"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="200"
+        android:scrollHorizontally="true"
+        android:gravity="top"
+        android:paddingBottom="30dp"
+        android:paddingTop="30dp"
+        android:paddingRight="@dimen/spacing_normal"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:singleLine="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/padding_filter"
+        android:layout_marginTop="@dimen/padding_filter"
+        android:layout_marginRight="@dimen/padding_filter"
+        android:layout_marginBottom="@dimen/padding_filter" />
+<!-- android:background="@drawable/edittext_background_grey" -->
+</LinearLayout>

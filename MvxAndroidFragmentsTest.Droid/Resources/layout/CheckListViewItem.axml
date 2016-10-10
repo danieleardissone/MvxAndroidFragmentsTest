@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    local:MvxBind="Click ItemSelectedCommand"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_marginTop="@dimen/spacing_smallest"
+    android:layout_marginBottom="@dimen/spacing_smallest"
+    android:gravity="center_vertical"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal">
+<!-- android:layout_height="60dp" -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <LinearLayout
+            android:id="@+id/linearActivityText"
+            android:orientation="vertical"
+            android:focusable="false"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                local:MvxBind="Text Title; Typeface StringToFont('regular')"
+                android:id="@+id/txtCheckListItemTitolo"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end" />
+            <TextView
+                local:MvxBind="Text Comment; Typeface StringToFont('regular')"
+                android:id="@+id/txtCheckListItemDescrizione"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/font_normal"
+                android:layout_width="@dimen/listviewing_nodl"
+                android:layout_height="wrap_content"
+                android:ellipsize="end" />
+        </LinearLayout>
+        <android.support.v7.widget.SwitchCompat
+            local:MvxBind="Checked Done"
+            android:textOff=""
+            android:textOn=""
+            android:id="@+id/android.support.v7.widget.SwitchCompat1"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_smaller"
+            android:layout_gravity="right|center_vertical"
+            android:layout_height="wrap_content" />
+    <!-- android:scaleY="0.5" -->
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+
+<style name="NovusMobileAppTheme" parent="NovusMobileAppTheme.Base">
+    </style>
+
+    <!-- Base theme applied no matter what API -->
+    <style name="NovusMobileAppTheme.Base" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
+        <item name="colorPrimary">@color/white</item>
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimaryDark">@color/black</item>
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorAccent">@color/navservice_orange</item>
+        <!-- colorAccent is used as the default value for colorControlActivated         which is used to tint widgets -->
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!--We will be using the toolbar so no need to show ActionBar-->
+
+        <!---<item name="android:autoCompleteTextViewStyle">@style/MyAutoCompleteTextViewStyle</item>
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+        <item name="android:editTextStyle">@style/PseudoIosEditTextStyle</item>
+        <item name="android:checkedTextViewStyle">@style/MyCheckedTextViewStyle</item>
+        <item name="android:spinnerStyle">@style/MySpinnerStyle</item>
+        <item name="android:buttonStyle">@style/MyButtonStyle</item>-->
+
+        <item name="switchStyle">@style/MySwitchStyle</item>
+        <!---<item name="windowActionBarOverlay">true</item>
+        <item name="homeAsUpIndicator">@drawable/ic_menu_check</item>-->
+        <item name="actionBarStyle">@style/MyActionBarStyle</item>
+        <!--<item name="drawerArrowStyle">@style/MyDrawerArrowStyle</item>-->
+    </style>
+
+	<style name="MyActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
+		<!---<item name="logo"> </item>-->
+		<item name="displayOptions">showHome|homeAsUp|showTitle</item>
+	</style>
+
+	<style name="MySwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
+		<item name="track">@drawable/switch_track_selector</item>
+		<item name="android:thumb">@drawable/switch_thumb_selector</item>
+	</style>
+</resources>

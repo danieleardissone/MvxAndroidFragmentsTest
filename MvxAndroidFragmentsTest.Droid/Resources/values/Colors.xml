@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_gray">#555555</color>
+    <color name="light_gray">#D1D0CE</color>
+    <color name="light_gray_transparent">#40D1D0CE</color> <!-- Le prime due cifre indicano il livello di trasparenza (40 -> 25%) --> 
+
+    <color name="yellow" type="color">#ffd32d</color>
+
+    <color name="novus_lightblue">#2ca0da</color>
+    <color name="novus_lightblue_light">#c6d4db</color>
+
+    <color name="navservice_orange">#ef5127</color>
+    <color name="navservice_orange_dark">#c5310a</color>
+    <color name="navservice_lightblue">#189aca</color>
+
+</resources>

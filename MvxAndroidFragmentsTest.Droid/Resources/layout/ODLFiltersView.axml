@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView1"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout1"
+            android:showDividers="middle"
+            android:paddingTop="@dimen/button_height_normal"
+            android:padding="@dimen/spacing_small">
+            <EditText
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext_background_grey"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:drawablePadding="10sp"
+                android:hint="Numero"
+                android:textColorHint="@drawable/hint_selector"
+                android:padding="10dp"
+                android:layout_marginLeft="@dimen/padding_filter"
+                android:id="@+id/editText1"
+                android:layout_marginTop="@dimen/datepickers_padding_top"
+                android:layout_marginRight="@dimen/padding_filter" />
+            <TextView
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:text="Status"
+                android:textColor="@color/black"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textSize="@dimen/font_large"
+                android:layout_marginTop="@dimen/button_height_normal"
+                android:layout_marginLeft="@dimen/padding_filter" />
+            <MvxSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:hint="StatoODL"
+                local:MvxDropDownItemTemplate="@layout/odlfiltersviewitem"
+                local:MvxItemTemplate="@layout/odlfiltersviewitem"
+                local:MvxBind="ItemsSource StatusList; SelectedItem Status"
+                android:id="@+id/mvxSpinner2"
+                android:layout_marginLeft="@dimen/padding_filter"
+                android:layout_marginRight="@dimen/padding_filter" />
+            <EditText
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext_background_grey"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:drawablePadding="10sp"
+                android:textColorHint="@drawable/hint_selector"
+                android:padding="10dp"
+                android:hint="Cliente"
+                android:layout_marginTop="@dimen/button_height_normal"
+                android:layout_marginLeft="@dimen/padding_filter"
+                android:id="@+id/editText2"
+                android:layout_marginRight="@dimen/padding_filter" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout2"
+                android:layout_marginTop="@dimen/button_height">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/datepicker_padding"
+                    android:id="@+id/linearLayout4">
+                    <TextView
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('regular')"
+                        android:text="Data da"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView4"
+                        android:textSize="@dimen/font_large"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="0.0dp" />
+                    <TextView
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('regular')"
+                        android:text="Data a"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/textView5"
+                        android:textSize="@dimen/font_large"
+                        android:layout_marginLeft="230dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/linearLayout3"
+                    android:layout_marginLeft="@dimen/datepicker_padding">
+                    <MvxDatePicker
+                        android:datePickerMode="spinner"
+                        android:calendarViewShown="false"
+                        android:textSize="1dp"
+                        local:MvxBind="Value DateFrom"
+                        android:id="@+id/mvxDatePicker2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                <!-- android:spinnersShown="true" -->
+                    <MvxDatePicker
+                        android:datePickerMode="spinner"
+                        android:calendarViewShown="false"
+                        android:textSize="1dp"
+                        local:MvxBind="Value DateTo"
+                        android:id="@+id/mvxDatePicker1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/button_height_short" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

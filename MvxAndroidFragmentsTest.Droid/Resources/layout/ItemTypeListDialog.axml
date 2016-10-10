@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/spacing_small"
+    android:layout_margin="@dimen/spacing_small"
+    android:minWidth="350dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/materialtypelist_title"
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/font_larger"
+            android:textColor="@color/novus_lightblue"
+            local:MvxBind="Typeface StringToFont('bold')" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/spacing_normal">
+            <View
+                style="@style/DividerBlue" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayoutCostList">
+        <!--local:MvxBind="Visibility Visibility(CostTypeList)">-->
+            <SearchView
+                android:queryHint="@string/itemtypelist_search_hint"
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:id="@+id/search_view_popup"
+                android:minWidth="25px"
+                android:iconifiedByDefault="false"
+                android:minHeight="25px"
+                android:background="@drawable/edittext_background"
+                android:layout_width="@dimen/searchview_width"
+                android:layout_height="@dimen/textfield_height"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font_normal" />
+            <Mvx.MvxListView
+                local:MvxBind="ItemsSource ItemTypeList; ItemClick ItemTypeItemSelectedCommand"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/ItemTypeMvxListView"
+                local:MvxItemTemplate="@layout/quickchoselistviewitem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        <!--<TextView
+                android:gravity="center"
+                local:MvxBind="Typeface StringToFont('regular'); Visibility ItemTypeList.Count, Converter=InvertedVisibility"
+                android:text="@string/no_items_message"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:layout_marginTop="@dimen/error_message_pad" />-->
+        <!-- local:MvxBind="ItemsSource ResourceTypeList; ItemClick ItemSelectedCommand" -->
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnDismiss"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/spacing_smaller"
+        android:layout_marginRight="@dimen/spacing_smaller"
+        android:src="@drawable/ic_close_dialog"
+        android:background="@color/transparent" />
+</RelativeLayout>

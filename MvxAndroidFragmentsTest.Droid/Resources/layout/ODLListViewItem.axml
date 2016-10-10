@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_smallest"
+    android:layout_marginBottom="@dimen/spacing_smallest"
+    android:background="@android:color/transparent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout12">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/ic_build_odl_opened"
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="0.8"
+                android:scaleY="0.8" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/linearLayout11"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/linearLayout1">
+                <TextView
+                    local:MvxBind="Text CustomerName; Typeface StringToFont('regular')"
+                    android:id="@+id/txtODLTitle"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_large"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    local:MvxBind="Text CustomerCityAndCounty; Typeface StringToFont('regular')"
+                    android:id="@+id/txtODLTitle"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_large"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:focusable="false"
+                    android:id="@+id/linearLayout10">
+                <!--"@string/font_path_myriad_semiboldit"-->
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_small"
+                android:id="@+id/linearLayout9">
+            <!-- local:MvxBind="Click ItemSelectedCommand" 
+        android:clickable="true" -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:id="@+id/linearLayout7">
+                    <TextView
+                        local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('regular')"
+                        android:maxLines="1"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="@dimen/font_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:id="@+id/textView6" />
+                    <TextView
+                        local:MvxBind="Text CustomerAddressComplete; Typeface StringToFont('regular')"
+                        android:maxLines="1"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="@dimen/font_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:drawablePadding="@dimen/spacing_small"
+                        android:layout_marginLeft="0dp"
+                        android:id="@+id/textView2" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="@dimen/listviewing"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:id="@+id/linearLayout8">
+                        <TextView
+                            local:MvxBind="Text Description; Typeface StringToFont('regular')"
+                            android:maxLines="1"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="@dimen/font_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:id="@+id/textView7" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutStatus">
+            <TextView
+                local:MvxBind="Typeface StringToFont('semiboldit')"
+                android:maxLines="1"
+                android:text="Stato: "
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:ellipsize="end"
+                android:id="@+id/textViewStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                local:MvxBind="Text WorkFlowStatusDescription; Typeface StringToFont('semiboldit')"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:ellipsize="end"
+                android:id="@+id/textViewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutResource">
+            <TextView
+                local:MvxBind="Typeface StringToFont('semiboldit')"
+                android:maxLines="1"
+                android:text="Operatore: "
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:ellipsize="end"
+                android:id="@+id/textViewResourceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                local:MvxBind="Text AssignedUser; Typeface StringToFont('semiboldit')"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:ellipsize="end"
+                android:id="@+id/textViewResource"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

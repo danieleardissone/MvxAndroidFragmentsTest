@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+<!-- android:background="@drawable/background_view" -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:paddingRight="@dimen/spacing_normal"
+        android:paddingTop="@dimen/spacing_normal"
+        android:layout_marginTop="18dp"
+        android:id="@+id/lLayout"
+        android:baselineAligned="true">
+        <LinearLayout
+            android:layout_marginTop="18dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayoutDescrizione">
+            <TextView
+                local:MvxBind="Typeface StringToFont('bold')"
+                android:text="@string/sync_server"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewSyncServer" />
+            <EditText
+                local:MvxBind="Text SettingsData.SyncServer; Typeface StringToFont('regular')"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Notepadding_healthservicedocumentno_edit_add"
+                android:background="@drawable/edittext_background_grey"
+                android:textColor="@color/black"
+                android:hint="Imposta qui il server di sincronizzazione"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:drawablePadding="10sp"
+                android:textColorHint="@drawable/hint_selector"
+                android:padding="10dp"
+                android:gravity="top|left"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:id="@+id/editText2" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

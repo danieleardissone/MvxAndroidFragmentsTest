@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+<!--android:background="@drawable/background_view"-->
+    <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout3"
+        local:MvxBind="Visibility Visibility(WorkOrderLineList)">
+        <LinearLayout
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/spacing_normal"
+            android:paddingLeft="@dimen/spacing_normal">
+            <TextView
+                local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+                android:id="@+id/lblTitle"
+                android:textSize="@dimen/font_larger"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp" />
+        </LinearLayout>
+        <View
+            style="@style/DividerBlack"
+            android:id="@+id/view1"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:focusable="false">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout7"
+                android:layout_marginTop="2dp">
+                <ImageView
+                    android:src="@color/transparent"
+                    android:id="@+id/imageView1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="8dp"
+                    android:padding="8dp" />
+                <View
+                    android:background="@color/black"
+                    android:id="@+id/view4"
+                    android:layout_width="40dp"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/spacing_normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:padding="17dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="@dimen/button_alignment_padding2"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout1"
+                android:layout_marginTop="8dp">
+                <TextView
+                    local:MvxBind="Typeface StringToFont('semiboldit')"
+                    android:text="Articolo"
+                    android:id="@+id/txtMaterialTitle"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end" />
+                <View
+                    android:background="@color/black"
+                    android:layout_width="@dimen/button_alignment_padding2"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout5">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:layout_marginRight="20dp"
+                    android:minHeight="25px"
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        local:MvxBind="Typeface StringToFont('semiboldit')"
+                        android:text="Qtà Prev"
+                        android:maxLines="2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_large"
+                        android:ellipsize="end"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2" />
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        local:MvxBind="Typeface StringToFont('semiboldit')"
+                        android:text="Qtà Util"
+                        android:maxLines="2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_large"
+                        android:ellipsize="end"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2" />
+                    <TextView
+                        android:layout_marginTop="25dp"
+                        local:MvxBind="Typeface StringToFont('semiboldit')"
+                        android:text=" UM"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_large"
+                        android:ellipsize="end"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:background="@color/black"
+                        android:id="@+id/view3"
+                        android:layout_width="35dp"
+                        android:layout_height="2dp" />
+                    <View
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/black"
+                        android:id="@+id/view3"
+                        android:layout_width="35dp"
+                        android:layout_height="2dp" />
+                    <View
+                        android:layout_marginLeft="@dimen/spacing_normal"
+                        android:background="@color/black"
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginRight="@dimen/spacing_normal" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <Mvx.MvxListView
+            android:divider="@color/black"
+            android:dividerHeight="1dp"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/MaterialMvxListView"
+            local:MvxBind="ItemsSource WorkOrderLineList; ItemClick ItemSelectedCommand; Visibility Visibility(WorkOrderLineList.Count)"
+            local:MvxItemTemplate="@layout/detailviewitem" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            local:MvxBind="Visibility WorkOrderLineList.Count, Converter=InvertedVisibility"
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp">
+            <TextView
+                android:gravity="center"
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:text="@string/no_material_message"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:layout_marginTop="@dimen/error_message_pad" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

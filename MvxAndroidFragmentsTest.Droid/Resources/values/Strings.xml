@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="font_path_myriadpro_semibold">Fonts/MYRIADPRO-SEMIBOLD.OTF</string>
+  <string name="font_path_myriadpro_semiboldit">Fonts/MYRIADPRO-SEMIBOLDIT.OTF</string>
+  <string name="font_path_myriadpro_regular">Fonts/MYRIADPRO-REGULAR.OTF</string>
+  <string name="font_regular">Fonts/MYRIADPRO-REGULAR.OTF</string>
+  <string name="font_semiboldit">Fonts/MYRIADPRO-SEMIBOLDIT.OTF</string>
+  <string name="font_semibold">Fonts/MYRIADPRO-SEMIBOLD.OTF</string>
+
+  <string name="app_name">Mollo Officina</string>
+  <string name="unityOfmeasure">Unità Di Misura: </string>
+  <string name="note">Note: </string>
+  <string name="date_start">Ora Inizio: </string>
+  <string name="date_end">Ora Fine: </string>
+  <string name="data_inizio">Data Inizio: </string>
+  <string name="data_fine">Data Fine: </string>
+  <string name="data_permesso">Data Permesso: </string>
+  <string name="stato">Stato: </string>
+  <string name="operator">Operatore: </string>
+  <string name="dataRichiesta">Data Richiesta: </string>
+  <string name="noteOperatore">Note Operatore: </string>
+  <string name="noteAzienda">Note Azienda: </string>
+  <string name="description">Descrizione: </string>
+  <string name="total">Totale:  </string>
+  <string name="permit_type">Tipo di permesso:</string>
+  <string name="resource_choose">Tipo di lavoro:</string>
+  <string name="cost_choose">Costo:</string>
+  <string name="qty">Quantità:</string>
+  <string name="Totalqty">Quantità Totale:</string>
+  <string name="TotalCost">Costo Totale:</string>
+  <string name="material_choose">Articolo:</string>
+  <string name="costadd_date">Data: </string>
+  <string name="unit_cost">Costo Unitario: </string>
+  <string name="PrevQuantity">Quantità Prevista:</string>
+  <string name="usedquantity">Quantità Prelevata:</string>
+  <string name="qty_to_withdraw">Quantità da prelevare:</string>
+  <string name="qty_to_return">Quantità da rendere:</string>
+  <string name="note_label">Note: </string>
+  <string name="codiceinps">Codice INPS: </string>
+  <string name="no_odl_message">Nessun elemento nella lista degli ordini di lavoro</string>
+  <string name="no_material_message">Nessun elemento nella lista dei materiali</string>
+  <string name="no_costs_message">Nessun elemento nella lista dei costi</string>
+  <string name="no_hours_message">Nessun elemento nella lista delle ore</string>
+  <string name="no_comments_message">Nessun elemento nella lista delle note</string>
+  <string name="no_activities_message">Nessun elemento nella lista delle attività</string>
+  <string name="no_pictures_message">Nessun elemento nella lista delle foto</string>
+  <string name="no_notifications_message">Nessun elemento nella lista delle notifiche</string>
+  <string name="no_items_message">Nessun articolo corrisponde alla ricerca effettuata</string>
+  <string name="no_vacations_message">Nessun elemento nella lista delle ferie</string>
+  <string name="no_permits_message">Nessun elemento nella lista dei permessi</string>
+  <string name="no_healthservice_message">Nessun elemento nella lista delle giornate di mutua</string>
+  <string name="sync_server">Server di sincronizzazione: </string>
+  <!--<string name="no_odl_message">Nel sistema non è presente alcun ordine di lavoro per l\'operatore corrente e per gli eventuali filtri applicati</string>-->
+
+  <string name="action_filters">Filtri</string>
+  <string name="action_logout">Logout</string>
+  <string name="action_refresh">Refresh</string>
+  <string name="action_sync">Sync</string>
+  <string name="action_done">Conferma</string>
+  <string name="action_delete">Elimina</string>
+  <string name="action_close">Chiudi</string>
+  <string name="action_add">Aggiungi</string>
+  <string name="action_fclear">PulisciFiltri</string>
+  <string name="action_notifications">Notifiche</string>
+  <string name="linktosite">
+    <a href="http://www.novus.it">http://www.novus.it/</a>
+  </string>
+  <string name="common_information">Informazione.</string>
+  <string name="common_warning">Attenzione.</string>
+  <string name="common_error">Attenzione, qualcosa è andato storto.</string>
+  <string name="common_offline">Errore di connessione.</string>
+  <string name="splash_title">Mollo Officina</string>
+  <string name="login_title">LOGIN</string>
+  <string name="login_username">Username</string>
+  <string name="login_password">Password</string>
+  <string name="login_login">Login</string>
+
+  <string name="menu_title">Menu</string>
+  <string name="settings_title">Impostazioni</string>
+
+  <string name="odllist_title">Lista ODL</string>
+  <string name="odllist_ordernumber">ORDINA PER CODICE</string>
+  <string name="odllist_orderdate">ORDINA PER DATA</string>
+  <string name="odllist_ordercustomer">ORDINA PER CLIENTE</string>
+
+  <string name="odllist_search_hint">Cerca Cliente o Località</string>
+  <string name="itemtypelist_search_hint">Cerca Codice o Descrizione</string>
+
+  <string name="odlfilters_title">Filtri ODL</string>
+
+  <string name="odldetail_title">Dettaglio ODL</string>
+
+  <string name="contactclient_title">Contatta il cliente</string>
+  <string name="contactclient_phone">Chiamata telefonica</string>
+  <string name="contactclient_mail">Invio Email</string>
+  <string name="resourcetypelist_title">Scegli il tipo di lavoro</string>
+  <string name="costtypelist_title">Scegli il costo</string>
+  <string name="materialtypelist_title">Scegli l\'articolo</string>
+  <string name="permittypelist_title">Scegli il tipo di permesso</string>
+
+  <string name="photoorgallery_title">Aggiungi una nuova foto</string>
+  <string name="photoorgallery_gallery">Carica dalla gallery</string>
+  <string name="photoorgallery_photo">Scatta</string>
+
+  <string name="odlstatus_title">Status</string>
+  <string name="odlstatus_changestatus">Scegli il nuovo stato:</string>
+
+  <string name="picturelist_title">Foto</string>
+  <string name="materiallist_title">Materiali</string>
+  <string name="costlist_title">Costi</string>
+  <string name="hourlist_title">Ore</string>
+  <string name="odlnote_title">Note</string>
+
+  <string name="attivitalist_title">Attività</string>
+  <string name="gasstation_title">Carburanti</string>
+
+  <string name="add_title">Aggiungi</string>
+  <string name="modify_title">Modifica</string>
+  <string name="add_title_cost">Aggiungi Costi</string>
+  <string name="modify_title_cost">Modifica Costi</string>
+  <string name="add_title_hour">Aggiungi Ore</string>
+  <string name="modify_title_hour">Modifica Ore</string>
+  <string name="add_title_materiali">Aggiungi Materiali</string>
+  <string name="modify_title_materiali">Modifica Materiali</string>
+  <string name="add_title_foto">Aggiungi Foto</string>
+  <string name="modify_title_foto">Modifica Foto</string>
+  <string name="modify_title_vacations">Modifica Ferie</string>
+  <string name="add_title_vacations">Aggiungi Ferie</string>
+  <string name="modify_title_healthservice">Modifica Mutua</string>
+  <string name="add_title_healthservice">Aggiungi Mutua</string>
+  <string name="modify_title_permit">Modifica Permessi</string>
+  <string name="add_title_permit">Aggiungi Permesso</string>
+  <string name="modify_title_gasstation">Modifica Carburanti</string>
+  <string name="add_title_gasstation">Aggiungi Carburanti</string>
+
+  <string name="sign_title">Firma</string>
+
+  <string name="sign_app_path">com.radaee.reader</string>
+  <string name="sign_app_path_correct">com.novus.navservicesign</string>
+</resources>

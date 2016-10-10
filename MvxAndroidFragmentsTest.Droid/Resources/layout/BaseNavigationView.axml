@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_root"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!-- Header aligned to top -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <include
+            android:id="@+id/top_toolbar"
+            layout="@layout/toolbar_top" />
+    </RelativeLayout>
+<!-- Footer aligned to bottom -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:gravity="center">
+        <include
+            android:id="@+id/bottom_toolbar"
+            layout="@layout/toolbar_bottom" />
+    </RelativeLayout>
+<!-- Content -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+<!--<ImageView
+        android:layout_gravity="center|top"
+        android:adjustViewBounds="true"
+        android:src="@drawable/actionbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_Shadow"
+        android:layout_below="@id/header" />
+    <ImageView
+        android:id="@+id/line_notif"
+        android:layout_width="60dp"
+        android:layout_height="6dp"
+        android:scaleType="centerInside"
+        android:layout_above="@id/footer"
+        android:layout_marginBottom="-5dp"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone"
+        android:src="@drawable/context_menu_active_line" />
+    <ImageView
+        android:id="@+id/line_center"
+        android:layout_width="60dp"
+        android:layout_height="6dp"
+        android:scaleType="centerInside"
+        android:layout_above="@id/footer"
+        android:layout_marginBottom="-5dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:src="@drawable/context_menu_active_line" />
+    <ImageView
+        android:id="@+id/line_menu"
+        android:layout_width="60dp"
+        android:layout_height="6dp"
+        android:scaleType="centerInside"
+        android:layout_above="@id/footer"
+        android:layout_marginBottom="-5dp"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:src="@drawable/context_menu_active_line" />-->
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_view"
+    android:orientation="vertical">
+    <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="@color/white">
+    <!-- android:background="@drawable/background_view"-->
+        <LinearLayout
+            android:paddingTop="@dimen/spacing_normal"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/spacing_normal">
+            <TextView
+                local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+                android:id="@+id/lblTitle"
+                android:textSize="@dimen/font_larger"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp" />
+        </LinearLayout>
+        <View
+            style="@style/DividerBlack"
+            android:id="@+id/view1"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3">
+            <Mvx.MvxListView
+                android:layout_marginTop="18dp"
+                android:divider="@color/black"
+                android:dividerHeight="1dp"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ActivityMvxListView"
+                local:MvxBind="ItemsSource ODLAttivitaList; Visibility Visibility(ODLAttivitaList.Count)"
+                local:MvxItemTemplate="@layout/checklistviewitem" />
+        <!-- android:background="@drawable/background_view" -->
+            <LinearLayout
+                local:MvxBind="Visibility ODLAttivitaList.Count, Converter=InvertedVisibility"
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="260dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp">
+                <TextView
+                    android:gravity="center"
+                    local:MvxBind="Typeface StringToFont('regular')"
+                    android:text="@string/no_activities_message"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView1"
+                    android:layout_marginTop="@dimen/error_message_pad" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

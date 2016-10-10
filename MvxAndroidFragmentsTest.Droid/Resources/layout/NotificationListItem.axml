@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:clickable="false"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_smallest"
+    android:layout_marginBottom="@dimen/spacing_smallest"
+    android:background="@android:color/transparent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_small">
+    <!--android:clickable="true"
+    local:MvxBind="Click ItemSelectedCommand">-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false">
+            <ImageView
+                local:MvxBind="Visibility IsRead, Converter=InvertedVisibility"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageViewNote"
+                android:src="@drawable/ic_notification_standard_active" />
+            <ImageView
+                local:MvxBind="Visibility Visibility(IsRead)"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageViewNoteActive"
+                android:src="@drawable/ic_notification_standard" />
+        <!-- android:layout_gravity="center" -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:padding="@dimen/spacing_small">
+                <TextView
+                    local:MvxBind="Text ValidationRange; Typeface StringToFont('bold')"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:id="@+id/textViewNotificationRange"
+                    android:paddingBottom="@dimen/spacing_small" />
+                <TextView
+                    local:MvxBind="Text Title; Typeface StringToFont('regular')"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:id="@+id/textViewNotificationTitle" />
+                <TextView
+                    local:MvxBind="Text Text; Typeface StringToFont('regular')"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/font_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:id="@+id/textViewNotificationText" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+<!-- android:background="@drawable/background_view" -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/MaterialAddEditMainLayout"
+        android:background="@drawable/background_view"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:paddingRight="@dimen/spacing_normal"
+        android:paddingTop="@dimen/spacing_normal"
+        android:layout_marginTop="18dp">
+        <TextView
+            local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+            android:id="@+id/lblTitle"
+            android:textSize="@dimen/font_larger"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+        <View
+            style="@style/DividerBlack"
+            android:id="@+id/view1" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/MaterialAddEditBlock">
+            <LinearLayout
+                android:layout_marginTop="18dp"
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="600dp"
+                android:layout_height="match_parent"
+                android:id="@+id/MAEContainer">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ArticleLayout"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="@string/material_choose"
+                        android:textColor="@color/black"
+                        android:id="@+id/cod"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:id="@+id/ArticleObjLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_large"
+                            local:MvxBind="Error EnumerableString(Errors['ItemType.Code']); Text ItemType.Code; Typeface StringToFont('regular')"
+                            android:text="Text"
+                            android:id="@+id/ArticleText"
+                            android:layout_width="@dimen/button_alignment_padding"
+                            android:layout_height="match_parent" />
+                        <ImageButton
+                            android:src="@drawable/button_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/search_button"
+                            android:background="@color/transparent"
+                            local:MvxBind="Visibility Visibility(Adding)" />
+                        <ImageButton
+                            android:src="@drawable/button_barcode"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/barcode_button"
+                            android:background="@color/transparent"
+                            local:MvxBind="Click DoScanBarcodeCommand; Visibility Visibility(Adding)" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/DescriptionLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="200dp">
+                    <TextView
+                        android:textColor="@color/dark_gray"
+                        local:MvxBind="Text ItemType.Description; Typeface StringToFont('regular')"
+                        android:textSize="@dimen/font_large"
+                        android:text="Text"
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/UnityOfMeasureLayout"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="@string/unityOfmeasure"
+                        android:id="@+id/UniOfM"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_large"
+                        local:MvxBind="Text ItemType.UnityOfMeasure; Typeface StringToFont('regular')"
+                        android:text="Text"
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/MaterialDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="@string/costadd_date"
+                        android:id="@+id/Data"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:id="@+id/linearLayout7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_large"
+                            local:MvxBind="Typeface StringToFont('regular')"
+                            android:text=""
+                            android:id="@+id/MaterialDate"
+                            android:layout_width="@dimen/button_alignment_padding"
+                            android:layout_height="match_parent" />
+                        <ImageButton
+                            android:background="@color/transparent"
+                            android:src="@drawable/button_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/btnChangeDateMaterial" />
+                        <ImageButton
+                            local:MvxBind="Click SetTodayCommand"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:text="Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/SetTodayBtn"
+                            android:src="@drawable/button_oggi" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/expectedQLayout"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="@string/PrevQuantity"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_large"
+                        local:MvxBind="Text Quantity; Typeface StringToFont('regular')"
+                        android:text=""
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    local:MvxBind="Visibility Adding, Converter=InvertedVisibility"
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/UsedQtyLayout"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="@string/usedquantity"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_large"
+                        local:MvxBind="Text UsedQty; Typeface StringToFont('regular')"
+                        android:text=""
+                        android:id="@+id/Data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/QtyToWithdrawLayout"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="@string/qty_to_withdraw"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:id="@+id/linearLayout8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <EditText
+                            android:background="@drawable/edittext_background"
+                            android:layout_marginLeft="10dp"
+                            local:MvxBind="Text QtyToWithdraw; Typeface StringToFont('regular')"
+                            android:textSize="@dimen/font_large"
+                            android:inputType="number"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/EditQtyToWith" />
+                        <ImageButton
+                            android:layout_marginLeft="200dp"
+                            android:background="@color/transparent"
+                            android:src="@drawable/button_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/AddQtyToWith"
+                            local:MvxBind="Click SetAddOneQtyToWithdrawCommand" />
+                        <ImageButton
+                            local:MvxBind="Click SetRemoveOneQtyToWithdrawCommand"
+                            android:layout_marginLeft="10dp"
+                            android:background="@color/transparent"
+                            android:src="@drawable/button_remove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/SubQtyToWith" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    local:MvxBind="Visibility Adding, Converter=InvertedVisibility"
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/QtyToReturnLayout"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:textSize="@dimen/font_large"
+                        android:textColor="@color/black"
+                        local:MvxBind="Typeface StringToFont('bold')"
+                        android:text="Quantità da rendere:"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_width="400dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/linearLayout4">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:id="@+id/linearLayout8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <EditText
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/edittext_background"
+                                local:MvxBind="Text QtyToReturn; Typeface StringToFont('regular');"
+                                android:textSize="@dimen/font_large"
+                                android:inputType="number"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/EditQtyToRet" />
+                            <ImageButton
+                                local:MvxBind="Click SetAddOneQtyToReturnCommand"
+                                android:layout_marginLeft="200dp"
+                                android:background="@color/transparent"
+                                android:src="@drawable/button_add"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/AddQtyToRet" />
+                            <ImageButton
+                                local:MvxBind="Click SetRemoveOneQtyToReturnCommand"
+                                android:layout_marginLeft="10dp"
+                                android:background="@color/transparent"
+                                android:src="@drawable/button_remove"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/SubQtyToRet" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:textSize="@dimen/font_large"
+            local:MvxBind="Typeface StringToFont('bold')"
+            android:text="@string/note"
+            android:textColor="@color/black"
+            android:id="@+id/Note"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <EditText
+            local:MvxBind="Text Comment; Typeface StringToFont('regular')"
+            android:background="@drawable/edittext_background_grey"
+            android:textColor="@color/black"
+            android:hint="Aggiungi qui le note"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:drawablePadding="10sp"
+            android:textColorHint="@drawable/hint_selector"
+            android:padding="20dp"
+            android:gravity="top|left"
+            android:id="@+id/NoteSpace"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Notepadding_material_edit_add"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</ScrollView>

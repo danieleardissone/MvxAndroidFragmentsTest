@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+<!-- android:background="@drawable/background_view" -->
+    <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minWidth="25px"
+        android:minHeight="25px">
+    <!-- android:background="@color/navservice_orange" -->
+        <LinearLayout
+            android:paddingTop="@dimen/spacing_normal"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/spacing_normal">
+            <TextView
+                local:MvxBind="Text WorkOrderTitle; Typeface StringToFont('bold')"
+                android:id="@+id/lblTitle"
+                android:textSize="@dimen/font_larger"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp" />
+        </LinearLayout>
+        <View
+            style="@style/DividerBlack"
+            android:id="@+id/view1"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_normal">
+            <TextView
+                android:gravity="left"
+                local:MvxBind="Typeface StringToFont('regular')"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TextViewCurrentStatus"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large" />
+            <TextView
+                android:gravity="left"
+                local:MvxBind="Typeface StringToFont('regular'); Visibility Visibility(StatusList)"
+                android:text="@string/odlstatus_changestatus"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TextViewChangeStatus"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_large" />
+        <!-- ; Visibility Visibility(IsOpen) -->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal"
+            android:minWidth="25px"
+            android:minHeight="25px" />
+        <Mvx.MvxListView
+            android:divider="@color/black"
+            android:dividerHeight="1dp"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ODLStatusMvxListView"
+            local:MvxBind="ItemsSource StatusList"
+            local:MvxItemTemplate="@layout/singledetailviewitem"
+            android:background="@drawable/background_view" />
+    </LinearLayout>
+</RelativeLayout>
