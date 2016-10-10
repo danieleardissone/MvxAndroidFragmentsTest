@@ -16,13 +16,12 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.Permissions;
-using MolloOfficina.Core.Entities;
-using MolloOfficina.Core.Resources;
-using Plugin.Permissions.Abstractions;
-using MolloOfficina.Core.Helpers;
-using MolloOfficina.Core.Exceptions;
+using MvxAndroidFragmentsTest.Core.Entities;
+using MvxAndroidFragmentsTest.Core.Resources;
+using MvxAndroidFragmentsTest.Core.Helpers;
+using MvxAndroidFragmentsTest.Core.Exceptions;
 
-namespace MolloOfficina.Core.ViewModels
+namespace MvxAndroidFragmentsTest.Core.ViewModels
 {
 	public class BaseViewModel : MvxViewModel, INotifyDataErrorInfo
 	{
@@ -49,14 +48,6 @@ namespace MolloOfficina.Core.ViewModels
 			MvxMessenger.Unsubscribe<TMessage>(id);
 		}
 
-        protected IMvxPermissions MvxPermissions
-        {
-            get
-            {
-                return Mvx.Resolve<IMvxPermissions>();
-            }
-        }
-
         public virtual IMvxCommand RefreshViewStateCommand { get { return null; } }
 
 		#region Parameteres
@@ -68,34 +59,6 @@ namespace MolloOfficina.Core.ViewModels
 			set {
 				_isBusy = value;
 				RaisePropertyChanged (() => IsBusy);
-			}
-		}
-
-		private string _workOrderTitle = string.Empty;
-		public string WorkOrderTitle {
-			get {
-				return _workOrderTitle;
-			}
-			set {
-				_workOrderTitle = value;
-				RaisePropertyChanged (() => WorkOrderTitle);
-			}
-		}
-
-		private string _lastSync;
-		public string LastSync
-		{ 
-			get { 
-				return _lastSync;
-			}
-
-			set {
-
-				if (value == _lastSync)
-					return;
-
-				_lastSync = value;
-				RaisePropertyChanged (() => LastSync);
 			}
 		}
 		#endregion
@@ -224,33 +187,10 @@ namespace MolloOfficina.Core.ViewModels
 		}
 		#endregion
 
-		#region Connection
-		protected void CheckDeviceConnectivity()
-		{
-			if (!CrossConnectivity.Current.IsConnected)
-				throw new MolloOfficinaOfflineException (CoreResources.err_device_offline_msg);
-		}
-
-		private async Task CheckConnectionAsync()
-		{
-			if (!await CrossConnectivity.Current.IsRemoteReachable(CoreResources.remote_host))
-			{
-				throw new MolloOfficinaOfflineException(CoreResources.err_offline_msg);
-			}
-		}
-
-		protected async Task<bool> IsConnected()
-		{
-			return CrossConnectivity.Current.IsConnected &&
-				await CrossConnectivity.Current.IsRemoteReachable(CoreResources.remote_host);
-		}
-		#endregion
-
 		#region Navigation and Dialogs
 		protected void ShowViewModelAndClearBackStack<T>(IMvxBundle paramBundle = null) where T : MvxViewModel
 		{
 			ShowViewModel<T>(paramBundle);
-			//ChangePresentation(new ClearNavBackStackHint());
 		}
 
 		protected void ShowMessageBox(string title, string message) //, Action onOKAction)
@@ -309,141 +249,7 @@ namespace MolloOfficina.Core.ViewModels
 				return;
 			InvokeOnMainThread (() => dlg.HideLoading ());
 		}
-
-		private static AsyncLock _asyncLock = new AsyncLock();
-		protected async Task<T> ShowLoadingForLongOperationAsync<T>(Func<Task<T>> func)
-		{
-			using (await _asyncLock.LockAsync ().ConfigureAwait (false)) 
-			{
-				try
-				{
-					ShowProgressDialog();
-					IsBusy = true;
-
-					return await func();
-				}
-				catch (MolloOfficinaOfflineException offEx) {
-					throw offEx; //new NavServiceAppOfflineException("Offline", ex);
-				}
-				catch (WebException webEx) {
-					throw webEx; //new NavServiceAppOfflineException("Offline", ex);
-				}
-				/*catch (NavServiceAppOfflineException ex) {
-					throw new NavServiceAppOfflineException("Offline", ex);
-				}*/
-				catch (Exception ex) {
-					throw ex; //new Exception ();
-				}
-				finally {
-					IsBusy = false;
-					HideProgressDialog ();
-				}
-			}
-		}
-
-		protected async Task<T> LongOperationAsync<T>(Func<Task<T>> func)
-		{
-			using (await _asyncLock.LockAsync ().ConfigureAwait (false)) 
-			{
-				try
-				{
-					IsBusy = true;
-
-					return await func();
-				}
-				catch (MolloOfficinaOfflineException offEx) {
-					throw offEx; //new NavServiceAppOfflineException("Offline", ex);
-				}
-				catch (WebException webEx) {
-					throw webEx; //new NavServiceAppOfflineException("Offline", ex);
-				}
-				/*catch (NavServiceAppOfflineException ex) {
-					throw new NavServiceAppOfflineException("Offline", ex);
-				}*/
-				catch (Exception ex) {
-					throw ex; //new Exception ();
-				}
-				finally {
-					IsBusy = false;
-				}
-			}
-		}
-
-		protected async Task<T> ShowLoadingForLongOperationWithMessageAsync<T>(Func<Task<T>> func, string message)
-		{
-			using (await _asyncLock.LockAsync ().ConfigureAwait (false)) 
-			{
-				try
-				{
-					ShowProgressDialogWithMessage(message);
-					IsBusy = true;
-
-					return await func();
-				}
-				catch (MolloOfficinaOfflineException offEx) {
-					throw offEx; //new NavServiceAppOfflineException("Offline", ex);
-				}
-				catch (WebException webEx) {
-					throw webEx; //new NavServiceAppOfflineException("Offline", ex);
-				}
-				/*catch (NavServiceAppOfflineException ex) {
-					throw new NavServiceAppOfflineException("Offline", ex);
-				}*/
-				catch (Exception ex) {
-					throw ex; //new Exception ();
-				}
-				finally {
-					IsBusy = false;
-					HideProgressDialog ();
-				}
-			}
-		}
 		#endregion
-
-		private string GetDeviceID()
-		{
-			IHardware hw = Mvx.Resolve<IHardware> ();
-			if (hw == null)
-				return string.Empty;
-
-			return hw.DeviceId;
-		}
-
-        #region Runtime Permissions
-        protected async Task<bool> CheckRunTimePermissions(Permission permission) //Action myMethodName)
-        {
-            //if (await _permissions.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
-            //myMethodName();
-
-            var status = await MvxPermissions.CheckPermissionStatusAsync(permission);
-
-            if (status != PermissionStatus.Granted)
-            {
-                if (await MvxPermissions.ShouldShowRequestPermissionRationaleAsync(permission))
-                {
-                    //await DisplayAlert("Need location", "Gunna need that location", "OK");
-                }
-
-                var results = await MvxPermissions.RequestPermissionsAsync(new[] { permission });
-                status = results[permission];
-            }
-
-            if (status == PermissionStatus.Granted)
-            {
-                //myMethodName();
-                return true ? status == PermissionStatus.Granted : false;
-                //var results = await CrossGeolocator.Current.GetPositionAsync(10000);
-                //LabelGeolocation.Text = "Lat: " + results.Latitude + " Long: " + results.Longitude;
-            }
-            else if (status != PermissionStatus.Unknown)
-            {
-                return false;
-                //await DisplayAlert("Location Denied", "Can not continue, try again.", "OK");
-            }
-
-            return false;
-        }
-        #endregion
     }
 }
 
