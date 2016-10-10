@@ -79,7 +79,7 @@ namespace MvxAndroidFragmentsTest.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxControl;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxControl_MvxTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxExpandableListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MolloOfficina.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxImageView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxImageView_MvxSource;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MvxAndroidFragmentsTest.Droid.Resource.Styleable.MvxListView;
