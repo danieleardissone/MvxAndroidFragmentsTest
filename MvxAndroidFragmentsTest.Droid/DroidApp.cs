@@ -1,11 +1,10 @@
 ﻿using System;
 using Android.App;
-//using Calligraphy;
 using Android.Runtime;
 using Android.OS;
 using Plugin.CurrentActivity;
 
-namespace NovusMobile.Droid
+namespace MvxAndroidFragmentsTest.Droid
 {
 	[Application]
 	public class DroidApp : Application, Application.IActivityLifecycleCallbacks
@@ -14,19 +13,6 @@ namespace NovusMobile.Droid
 			:base (javaReference, transfer)
 		{
 		}
-
-        /*public override void OnCreate ()
-		{
-			base.OnCreate ();
-			//string defaultFontPath = GetString (Resource.String.font_path_cantarell_regular); // font_path_myriad_regular);
-			//CalligraphyConfig.InitDefault(defaultFontPath, Calligraphy.Resource.Attribute.fontPath);
-
-			//string defaultFontPath = GetString (Resource.String.font_path_myriad_regular);
-			/*CalligraphyConfig.InitDefault (new CalligraphyConfig.Builder ()
-				.SetDefaultFontPath (defaultFontPath)
-				.SetFontAttrId (Resource.Attribute.fontPath)
-				.Build ());*/
-        //}
 
         public override void OnCreate()
         {
