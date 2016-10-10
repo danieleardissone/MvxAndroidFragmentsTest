@@ -12,23 +12,21 @@ using Android.Telephony;
 using Android.Content.PM;
 using Plugin.Permissions;
 using MvvmCross.Platform;
-using MolloOfficina.Core.Entities;
-using MolloOfficina.Core.Exceptions;
-using MolloOfficina.Core.Enums;
+using MvxAndroidFragmentsTest.Core.Entities;
+using MvxAndroidFragmentsTest.Core.Exceptions;
+using MvxAndroidFragmentsTest.Core.Enums;
 using Android.Content.Res;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Core.ViewModels;
-using MolloOfficina.Core.ViewModels;
-using MolloOfficina.Droid.Views.Dialogs;
+using MvxAndroidFragmentsTest.Core.ViewModels;
+using MvxAndroidFragmentsTest.Droid.Views.Dialogs;
 
-namespace MolloOfficina.Droid.Views
+namespace MvxAndroidFragmentsTest.Droid.Views
 {		
 	public class BaseActivityView<TViewModel> : MvxCachingFragmentCompatActivity<TViewModel> where TViewModel : class, IMvxViewModel //FragmentActivityWithActionBar, ICustomPresenterListener
 	{
 		private const string TAG = "BaseActivityView";
 		private const string NOTIFICATION_FRAGMENT_TAG = "NotificationFragment";
-
-		private TelephonyManager _telephonyManager;
 
 		private bool _hasBottomBar = true;
 		public bool HasBottomBar
@@ -49,29 +47,11 @@ namespace MolloOfficina.Droid.Views
 
 		protected BaseActivityView()
 		{
-			/*CustomPresenter presenter = Mvx.Resolve<CustomPresenter> ();
-			if (presenter != null)
-				presenter.SetListener (this);*/
+
 		}
-
-		/*public void ChangePresentation(MvxPresentationHint hint)
-		{
-			if (hint is MvxClosePresentationHint) {
-				RemoveLastFragmentFromBackStack ();
-			}
-
-			if (hint is ClearNavBackStackHint) 
-			{
-				while (SupportFragmentManager.BackStackEntryCount > 0) 
-				{
-					RemoveLastFragmentFromBackStack ();
-				}
-			}
-		}*/
 
 		protected new BaseViewModel ViewModel {
 			get { return base.ViewModel as BaseViewModel; }
-			//set { base.ViewModel = value; }
 		}
 
 		#region ActionBar Stuff
@@ -112,11 +92,6 @@ namespace MolloOfficina.Droid.Views
 			SetCenteredTitle(aTitle);
 		}
 
-		/*protected override void AttachBaseContext(Context context)
-		{
-			base.AttachBaseContext(new CalligraphyContextWrapper(context));
-		}*/
-
 		public override bool OnSupportNavigateUp()
 		{
 			Android.Content.Intent upIntent = NavUtils.GetParentActivityIntent(this);
@@ -137,20 +112,6 @@ namespace MolloOfficina.Droid.Views
 			}
 			return true;
 		}
-		#endregion
-
-		#region ToolBar stuff
-		/*protected void SetupBottomBar(ref Toolbar _bottomBar)
-		{
-			Toolbar bottomBar = FindViewById<Toolbar> (Resource.Id.bottom_toolbar);
-
-			if (!HasBottomBar) {
-				bottomBar.Visibility = false;
-				return;
-			}
-			
-			//bottomBar.MenuItemClick += HandleBottomBarClick;
-		}*/
 		#endregion
 
 		protected override void OnCreate(Bundle bundle)
@@ -176,31 +137,17 @@ namespace MolloOfficina.Droid.Views
 				//Log.Error(TAG, "Activity has been already destroyed");
 				return;
 			}
-
-			// QUI CONTROLLO SE IL DEVICE PUO' O MENO EFFETTUARE CHIAMATE
-			/*_telephonyManager = (TelephonyManager)GetSystemService(Context.TelephonyService);
-			if (_telephonyManager.IsSmsCapable) 
-			{
-				//IS PHONE 
-			}*/
 		}
 
 		protected virtual void HandleGeneralFailure (object sender, EventArgs<Exception> e)
 		{
-			if (e.Value is MolloOfficinaOfflineException || e.Value is WebException)
+			if (e.Value is MvxAndroidFragmentsTestOfflineException || e.Value is WebException)
 			{
-				//new OfflineDialogFragment(Application).Show(SupportFragmentManager, "OfflineDialogFragment");
-				//new OfflineDialogFragment(CallingActivity).Show(SupportFragmentManager, "OfflineDialogFragment");
 				ShowAlertDialogFragment (e.Value.Message, MessageTypeEnum.Offline);
 				return;
 			}
 			ShowAlertDialogFragment (e.Value.Message, MessageTypeEnum.Error);
 		}
-
-		/*protected virtual void HandleWebCallError (object sender, EventArgs<ResponseCodeDto> e)
-        {
-            ShowAlertDialogFragment (e.Value.Description, MessageTypeEnum.Warning);
-        }*/
 
 		protected void ShowAlertDialogFragment (int aMessage, MessageTypeEnum aType)
 		{
@@ -229,22 +176,14 @@ namespace MolloOfficina.Droid.Views
 
 		protected void ShowAlertDialogFragment(string aMessage, string aTitle, int aIcon)
 		{
-			//if (Build.VERSION.SdkInt >= BuildVersionCodes.JellyBeanMr1) {	// IsDestroyed has been introduced since API Level 17
 			if (SupportFragmentManager.IsDestroyed)
 			{
 				Log.Error(TAG, "Activity has been already destroyed");
 				return;
 			}
-			//} /**/
 			AlertDialogFragment frag = AlertDialogFragment.NewInstance(aMessage, aTitle, aIcon);
 			SupportFragmentManager.BeginTransaction().Add(frag, NOTIFICATION_FRAGMENT_TAG + frag.GetHashCode()).Commit();
 		}
-
-		//DA TESTARE ABILITANDO CALLIGRAPHY
-		/*protected override void AttachBaseContext(Context context)
-		{
-			base.AttachBaseContext(CalligraphyContextWrapper.Wrap(context));
-		}*/
 
 		private Android.Support.V4.App.Fragment FindFragment(string aTag)
 		{			if (SupportFragmentManager.Fragments == null)
@@ -263,25 +202,12 @@ namespace MolloOfficina.Droid.Views
 			return null;
 		}
 
-		/*protected override bool ShouldReplaceFragment(int contentId, string currentTag, string replacementTag)
-		{
-			// If the fragment already exists in the backstack, remove all the fragments until the parent is reached...
-			Android.Support.V4.App.Fragment frag = null;
-			while ((frag = FindFragment(replacementTag)) != null)
-			{
-				SupportFragmentManager.PopBackStackImmediate();
-			}
-			return true;
-		}*/
-
 		protected override void OnResume()
 		{
 			base.OnResume();
 
 			if (ViewModel != null) {
 				ViewModel.GeneralFailure += HandleGeneralFailure;
-				//ViewModel.ErrorsChanged += HandleErrorsChanged;
-				//            ViewModel- += HandleValidationError;
 			}
 		}
 
@@ -289,19 +215,10 @@ namespace MolloOfficina.Droid.Views
 		{
 			base.OnPause ();
 
-			/* Check: Removing Event Handlers in Activities
-        http://developer.xamarin.com/guides/cross-platform/deployment,_testing,_and_metrics/memory_perf_best_practices/
-            */
-
-			//          ViewModel.PropertyChanged -= HandlePropertyChanged;
 			if (ViewModel != null) {
 				ViewModel.GeneralFailure -= HandleGeneralFailure;
-				//ViewModel.ErrorsChanged -= HandleErrorsChanged;
 			}
 
-			// TODO: Temporary handles the invalid form data, will be moved to ConcreteView
-			//Hockey.StopTrackingUsage (this);
-			//Hockey.UnregisterManagers ();
 			Log.Debug (TAG, "OnPause()");
 		}
 
@@ -317,12 +234,6 @@ namespace MolloOfficina.Droid.Views
 			toast.SetGravity (GravityFlags.CenterHorizontal | GravityFlags.CenterVertical, 0, 0);
 			toast.Show ();
 		}
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
-        {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            //MvxPermissions.RequestPermissionsAsync(PLugin);
-        }
     }
 }
 
