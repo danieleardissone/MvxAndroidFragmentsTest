@@ -5,7 +5,7 @@ using MvvmCross.Droid.Support.V4;
 using MvvmCross.Plugins.Messenger;
 using MvvmCross.Platform;
 
-namespace MolloOfficina.Droid.Views.Dialogs
+namespace MvxAndroidFragmentsTest.Droid.Views.Dialogs
 {
 	public class BaseDialogFragment : MvxDialogFragment, IDialogInterface
 	{
