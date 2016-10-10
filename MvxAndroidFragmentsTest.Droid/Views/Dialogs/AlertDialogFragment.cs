@@ -6,7 +6,7 @@ using Android.App;
 using Android.Content;
 #endregion
 
-namespace MolloOfficina.Droid.Views.Dialogs
+namespace MvxAndroidFragmentsTest.Droid.Views.Dialogs
 {
 	public interface IAlertDialogListener
 	{
@@ -62,12 +62,6 @@ namespace MolloOfficina.Droid.Views.Dialogs
 			return alertDialogFragment;
 		}
 
-		/*public override void OnAttach(Activity activity)
-		{
-			base.OnAttach(activity);
-			_callback = activity as IAlertDialogListener;
-		}*/
-
         public override void OnAttach(Context context)
         {
             base.OnAttach(context);
@@ -117,4 +111,3 @@ namespace MolloOfficina.Droid.Views.Dialogs
 		}
 	}
 }
-
