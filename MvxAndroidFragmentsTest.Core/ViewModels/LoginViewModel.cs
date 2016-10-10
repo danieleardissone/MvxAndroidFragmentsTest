@@ -63,7 +63,7 @@ namespace MvxAndroidFragmentsTest.Core.ViewModels
 
 		private void DoLogin()
 		{
-                        ShowViewModelAndClearBackStack<MenuViewModel>();  
+                        //ShowViewModelAndClearBackStack<MenuViewModel>();  
 		}
 	}
 }
