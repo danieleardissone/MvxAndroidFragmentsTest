@@ -5,11 +5,11 @@ using Android.OS;
 using Android.Views;
 using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Plugins.Messenger;
-using MolloOfficina.Core.Messages;
-using MolloOfficina.Core.ViewModels;
+using MvxAndroidFragmentsTest.Core.Messages;
+using MvxAndroidFragmentsTest.Core.ViewModels;
 using MvvmCross.Binding.Droid.BindingContext;
 
-namespace MolloOfficina.Droid.Views.Dialogs
+namespace MvxAndroidFragmentsTest.Droid.Views.Dialogs
 {
 	public class NotificationDialogFragment : BaseDialogFragment
 	{
@@ -31,18 +31,6 @@ namespace MolloOfficina.Droid.Views.Dialogs
 			//set { base.ViewModel = value; }
 		}
 
-		/*private IList<Notification> _notificationList;
-		public IList<Notification> NotificationList {
-			get {
-				return _notificationList;
-			}
-			set {
-				_notificationList = value;
-
-				HandleNotificationListChanged();
-			}
-		}*/
-
 		public override Dialog OnCreateDialog (Bundle savedState)
 		{
 			base.EnsureBindingContextSet (savedState);
@@ -59,15 +47,6 @@ namespace MolloOfficina.Droid.Views.Dialogs
 			};
 
 			_list = markerPopUpWindow.FindViewById<MvxListView> (Resource.Id.NotificationList);
-			#region Binding
-
-
-			/*this.DelayBind (() => {
-				var set = this.CreateBindingSet<NotificationDialogFragment, ODLListViewModel> ();
-				set.Bind (this).For (v => v.NotificationList).To (vm => vm.NotificationList);
-				set.Apply ();
-			});*/
-			#endregion
 
 			return markerPopUpWindow;
 		}
@@ -82,14 +61,9 @@ namespace MolloOfficina.Droid.Views.Dialogs
 
 		private void HandleNotificationListChanged(TotNewNotificationsChangedMessage sender)
 		{
-			//if (_notificationList == null)
-				//return;
-
-			//_list = this.View.FindViewById<MvxListView> (Resource.Id.NotificationList);
-
 			Type t = ViewModel.GetType ();
 
-			if (t == typeof(ODLListViewModel)) {
+			/*if (t == typeof(ODLListViewModel)) {
 				_adapter = new MvxAdapter ((ODLListView)Context, (MvxAndroidBindingContext)BindingContext);
 
 				((ODLListView)Context).RunOnUiThread (() => {
@@ -102,13 +76,7 @@ namespace MolloOfficina.Droid.Views.Dialogs
 				((MenuView)Context).RunOnUiThread (() => {
 					_list.Adapter = _adapter;
 				});
-			}
-
-			/*_adapter = new MvxAdapter ((ODLListView)Context, (MvxAndroidBindingContext)BindingContext);
-
-			((ODLListView)Context).RunOnUiThread (() => {
-				_list.Adapter = _adapter;
-			});*/
+			}*/
 		}
 	}
 }
