@@ -12,14 +12,13 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V4;
-using MolloOfficina.Core.ViewModels;
-using MolloOfficina.Core.Enums;
+using MvxAndroidFragmentsTest.Core.ViewModels;
 using System.Net;
-using MolloOfficina.Core.Exceptions;
-using MolloOfficina.Core.Entities;
-using MolloOfficina.Droid.Views.Dialogs;
+using MvxAndroidFragmentsTest.Core.Exceptions;
+using MvxAndroidFragmentsTest.Core.Entities;
+using MvxAndroidFragmentsTest.Droid.Views.Dialogs;
 
-namespace MolloOfficina.Droid.Views.Fragments
+namespace MvxAndroidFragmentsTest.Droid.Views.Fragments
 {
     public abstract class BaseFragment : MvxFragment
     {
@@ -70,7 +69,7 @@ namespace MolloOfficina.Droid.Views.Fragments
 
         protected virtual void HandleGeneralFailure(object sender, EventArgs<Exception> e)
         {
-            if (e.Value is MolloOfficinaOfflineException || e.Value is WebException)
+            if (e.Value isMvxAndroidFragmentsTestOfflineException || e.Value is WebException)
             {
                 //new OfflineDialogFragment(Activity).Show(ChildFragmentManager, "OfflineDialogFragment");
                 ShowAlertDialogFragment(e.Value.Message, MessageTypeEnum.Offline);
@@ -81,7 +80,7 @@ namespace MolloOfficina.Droid.Views.Fragments
 
         protected void ShowAlertDialogFragment(string aMessage, MessageTypeEnum aType)
         {
-            switch (aType)
+            /*switch (aType)
             {
                 case MessageTypeEnum.Information:
                     ShowAlertDialogFragment(aMessage, Resources.GetString(Resource.String.common_information), Resource.Drawable.ic_dialog_information_shadow);
@@ -97,21 +96,16 @@ namespace MolloOfficina.Droid.Views.Fragments
                     break;
                 default:
                     break;
-            }
+            }*/
         }
 
         protected void ShowAlertDialogFragment(string aMessage, string aTitle, int aIcon)
         {
-            // TODO:
-
-            //if (Build.VERSION.SdkInt >= BuildVersionCodes.JellyBeanMr1)
-            //{	// IsDestroyed has been introduced since API Level 17
             if (ChildFragmentManager.IsDestroyed)
             {
                 Log.Error(TAG, "Activity has been already destroyed");
                 return;
             }
-            //} /**/
             AlertDialogFragment frag = AlertDialogFragment.NewInstance(aMessage, aTitle, aIcon);
             ChildFragmentManager.BeginTransaction().Add(frag, NOTIFICATION_FRAGMENT_TAG + frag.GetHashCode()).Commit();
         }
