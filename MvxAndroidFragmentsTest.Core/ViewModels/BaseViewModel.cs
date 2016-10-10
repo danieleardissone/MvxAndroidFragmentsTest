@@ -15,10 +15,8 @@ using Plugin.Connectivity;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Plugins.Messenger;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.Permissions;
 using MvxAndroidFragmentsTest.Core.Entities;
 using MvxAndroidFragmentsTest.Core.Resources;
-using MvxAndroidFragmentsTest.Core.Helpers;
 using MvxAndroidFragmentsTest.Core.Exceptions;
 
 namespace MvxAndroidFragmentsTest.Core.ViewModels
