@@ -9,8 +9,6 @@ using MvxAndroidFragmentsTest.Core.Helpers;
 using MvxAndroidFragmentsTest.Core.Exceptions;
 using MvvmCross.Core.ViewModels;
 using MvxAndroidFragmentsTest.Core.Constants;
-using Plugin.Permissions.Abstractions;
-using MvxAndroidFragmentsTest.Core.Services;
 
 namespace MvxAndroidFragmentsTest.Core.ViewModels
 {
