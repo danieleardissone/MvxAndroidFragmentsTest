@@ -2,7 +2,7 @@ using Android.App;
 using Android.Content.PM;
 using MvvmCross.Droid.Views;
 
-namespace MolloOfficina.Droid
+namespace MvxAndroidFragmentsTest.Droid
 {
     [Activity(
         Label = "@string/splash_title"
