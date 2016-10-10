@@ -2,13 +2,9 @@
 using System.Net;
 using System.Collections.Generic;
 using MvvmCross.Platform;
-using MvvmCross.Plugins.File;
 using MvxAndroidFragmentsTest.Core.Resources;
-using MvxAndroidFragmentsTest.Core.Constants;
-using MvxAndroidFragmentsTest.Core.Helpers;
 using MvvmCross.Core.ViewModels;
 using MvxAndroidFragmentsTest.Core.Exceptions;
-using MvxAndroidFragmentsTest.Core.Data;
 
 namespace MvxAndroidFragmentsTest.Core.ViewModels
 {
