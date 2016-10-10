@@ -3,7 +3,7 @@ using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Platform;
-using MvxAndroidFragmentsTest.Droid.Helpers;
+using MolloOfficina.Droid.Helpers;
 using MvvmCross.Plugins.File;
 using System.Collections.Generic;
 using System.Reflection;
@@ -12,13 +12,13 @@ using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Shared.Presenter;
 using MolloOfficina.Core.Services;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvxAndroidFragmentsTest.Core.Tasks;
-using MvxAndroidFragmentsTest.Droid.Tasks;
-using MvxAndroidFragmentsTest.Droid.Services;
+using MolloOfficina.Core.Tasks;
+using MolloOfficina.Droid.Tasks;
+using MolloOfficina.Droid.Services;
 using Acr.UserDialogs;
 using MvvmCross.Platform.Droid.Platform;
 
-namespace MvxAndroidFragmentsTest.Droid
+namespace MolloOfficina.Droid
 {
     public class Setup : MvxAndroidSetup
     {
@@ -39,12 +39,12 @@ namespace MvxAndroidFragmentsTest.Droid
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
-            /*Mvx.RegisterType<IOpenExternalAppTask, OpenExternalAppTask>();
+            Mvx.RegisterType<IOpenExternalAppTask, OpenExternalAppTask>();
             Mvx.RegisterType<IProfileService, ProfileService>();
             Mvx.RegisterType<IMenuService, MenuService>();
             Mvx.RegisterType<INotificationService, NotificationService>();
             Mvx.RegisterType<IWorkOrderAttachmentService, WorkOrderAttachmentService>();
-            Mvx.RegisterType<IWorkOrderHeaderService, WorkOrderHeaderService>();*/
+            Mvx.RegisterType<IWorkOrderHeaderService, WorkOrderHeaderService>();
         }
 
         protected override void InitializeLastChance()
