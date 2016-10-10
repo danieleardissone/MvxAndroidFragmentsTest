@@ -2,18 +2,18 @@
 using Android.Views;
 using Android.OS;
 using Android.Widget;
-using MolloOfficina.Droid.Views.Fragments;
-using MolloOfficina.Core.ViewModels;
+using MvxAndroidFragmentsTest.Droid.Views.Fragments;
+using MvxAndroidFragmentsTest.Core.ViewModels;
 using MvvmCross.Droid.Shared.Attributes;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.FullFragging.Fragments;
 
-namespace MolloOfficina.Droid.Views.Fragments
+namespace MvxAndroidFragmentsTest.Droid.Views.Fragments
 {
     //[MvxFragment((typeof(BaseViewModel)), Resource.Id.content_frame)]
     [MvxFragment((typeof(FragmentsHostViewModel)), Resource.Id.content_frame)] //, true)]
-    [Register("molloofficina.droid.views.fragments.SettingsFragment")]
-	public class SettingsFragment : BaseNavigationFragment<SettingsViewModel>//BaseNavigationFragment<SettingsViewModel>
+    [Register("mvxandroidfragmentstest.droid.views.fragments.SettingsFragment")]
+	public class SettingsFragment : BaseNavigationFragment<SettingsViewModel>
 	{
         protected override int FragmentId => Resource.Layout.SettingsView;
 
@@ -40,9 +40,6 @@ namespace MolloOfficina.Droid.Views.Fragments
 		public override void OnViewCreated (View view, Bundle savedInstanceState)
 		{
 			base.OnViewCreated (view, savedInstanceState);
-
-			//LoadListLayout ();
-			//HandleODLListOrderChanged (_sortType);
 		}
 
 		public override void OnCreateOptionsMenu (IMenu menu, MenuInflater inflater)
@@ -76,25 +73,5 @@ namespace MolloOfficina.Droid.Views.Fragments
 			}
 			return base.OnOptionsItemSelected (item);
 		}
-
-		/*private void LoadListLayout()
-		{
-			FrameLayout frameLayout = this.View.FindViewById<FrameLayout> (Resource.Id.content_frame_inner);
-			frameLayout.RemoveAllViews ();
-			this.BindingInflate (Resource.Layout.PermitListView, frameLayout, true);
-			//var list = this.View.FindViewById<MvxListView> (Resource.Id.ODLMvxListView);
-		}*/
-
-		/*public override void PerformCustomAction ()
-		{
-			base.PerformCustomAction ();
-			//ViewModel.ApplyFiltersCommand.Execute ();
-		}*/
-			
-		/*private void LoadList(bool orderByNumber)
-		{
-			ViewModel.OrderByName = orderByNumber;
-			ViewModel.DoChangeOrderCommand.Execute ();
-		}*/
 	}
 }
