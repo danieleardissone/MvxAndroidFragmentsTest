@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolloOfficina.Core", "MolloOfficina.Core\MolloOfficina.Core.csproj", "{149CA964-DB10-45FD-815F-A341FE89BA3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxAndroidFragmentsTest.Core", "MvxAndroidFragmentsTest.Core\MvxAndroidFragmentsTest.Core.csproj", "{149CA964-DB10-45FD-815F-A341FE89BA3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolloOfficina.Droid", "MolloOfficina.Droid\MolloOfficina.Droid.csproj", "{959F0D00-FF8B-451E-A307-BCD9ED52AAC2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Permissions.Core", "Permissions.Core\Permissions.Core.csproj", "{95D1C29A-ADF4-463B-9234-C35B48819C8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxAndroidFragmentsTest.Droid", "MvxAndroidFragmentsTest.Droid\MvxAndroidFragmentsTest.Droid.csproj", "{959F0D00-FF8B-451E-A307-BCD9ED52AAC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
