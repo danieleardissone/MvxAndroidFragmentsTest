@@ -8,13 +8,10 @@ using FluentValidation.Results;
 using Android.Util;
 using Android.Support.V4.App;
 using System.Net;
-using Android.Telephony;
 using Android.Content.PM;
-using Plugin.Permissions;
 using MvvmCross.Platform;
 using MvxAndroidFragmentsTest.Core.Entities;
 using MvxAndroidFragmentsTest.Core.Exceptions;
-using MvxAndroidFragmentsTest.Core.Enums;
 using Android.Content.Res;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Core.ViewModels;
@@ -156,22 +153,7 @@ namespace MvxAndroidFragmentsTest.Droid.Views
 
 		protected void ShowAlertDialogFragment (string aMessage, MessageTypeEnum aType)
 		{
-			switch (aType) {
-			case MessageTypeEnum.Information:
-				ShowAlertDialogFragment (aMessage, Resources.GetString (Resource.String.common_information), Resource.Drawable.ic_dialog_information_shadow); //Resource.Drawable.tmp_ic_dialog_info);
-				break;
-			case MessageTypeEnum.Warning:
-				ShowAlertDialogFragment (aMessage, Resources.GetString (Resource.String.common_warning), Resource.Drawable.ic_dialog_warning_shadow); //Resource.Drawable.tmp_ic_dialog_warning);
-				break;
-			case MessageTypeEnum.Error:
-				ShowAlertDialogFragment (aMessage, Resources.GetString (Resource.String.common_error), Resource.Drawable.ic_dialog_error_shadow); //Resource.Drawable.tmp_ic_dialog_error);
-				break;
-			case MessageTypeEnum.Offline:
-				ShowAlertDialogFragment (aMessage, Resources.GetString (Resource.String.common_offline), Resource.Drawable.ic_dialog_error_shadow); //Resource.Drawable.tmp_ic_dialog_error);
-				break;
-			default:
-				break;
-			}
+			ShowAlertDialogFragment (aMessage, Resources.GetString (Resource.String.common_warning), Resource.Drawable.ic_dialog_warning_shadow);
 		}
 
 		protected void ShowAlertDialogFragment(string aMessage, string aTitle, int aIcon)
