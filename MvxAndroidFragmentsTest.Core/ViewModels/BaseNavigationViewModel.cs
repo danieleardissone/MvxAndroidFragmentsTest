@@ -16,7 +16,6 @@ namespace MvxAndroidFragmentsTest.Core.ViewModels
 	public class BaseNavigationViewModel : BaseViewModel
 	{
 		private IProfileService _profileSvc = null;
-		private INotificationService _notificationSvc = null;
 		private IMenuService _menuSvc = null;
 
 		public BaseNavigationViewModel ()
@@ -24,10 +23,9 @@ namespace MvxAndroidFragmentsTest.Core.ViewModels
 
 		}
 
-		public BaseNavigationViewModel (IProfileService profileService, INotificationService notificationService)
+		public BaseNavigationViewModel (IProfileService profileService)
 		{
 			_profileSvc = Mvx.Resolve<IProfileService> ();
-			//_notificationSvc = Mvx.Resolve<INotificationService> ();
 		}
 
 		#region Commands
