@@ -1,12 +1,8 @@
 using System;
 using System.Net;
-using Plugin.Permissions.Abstractions;
-using MvxAndroidFragmentsTest.Core.Services;
-using MvxAndroidFragmentsTest.Core.Data;
 using MvvmCross.Core.ViewModels;
 using MvxAndroidFragmentsTest.Core.Exceptions;
 using MvxAndroidFragmentsTest.Core.Resources;
-using MvxAndroidFragmentsTest.Core.Helpers;
 
 namespace MolloOfficina.Core.ViewModels
 {
