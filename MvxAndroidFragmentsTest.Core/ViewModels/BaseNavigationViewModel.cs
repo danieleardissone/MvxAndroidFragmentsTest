@@ -3,15 +3,15 @@ using System.Net;
 using System.Collections.Generic;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.File;
-using MolloOfficina.Core.Resources;
-using MolloOfficina.Core.Constants;
-using MolloOfficina.Core.Helpers;
+using MvxAndroidFragmentsTest.Core.Resources;
+using MvxAndroidFragmentsTest.Core.Constants;
+using MvxAndroidFragmentsTest.Core.Helpers;
 using MvvmCross.Core.ViewModels;
-using MolloOfficina.Core.Exceptions;
-using MolloOfficina.Core.Services;
-using MolloOfficina.Core.Data;
+using MvxAndroidFragmentsTest.Core.Exceptions;
+using MvxAndroidFragmentsTest.Core.Services;
+using MvxAndroidFragmentsTest.Core.Data;
 
-namespace MolloOfficina.Core.ViewModels
+namespace MvxAndroidFragmentsTest.Core.ViewModels
 {
 	public class BaseNavigationViewModel : BaseViewModel
 	{
@@ -29,16 +29,6 @@ namespace MolloOfficina.Core.ViewModels
 			_profileSvc = Mvx.Resolve<IProfileService> ();
 			//_notificationSvc = Mvx.Resolve<INotificationService> ();
 		}
-
-		/*public override IMvxCommand RefreshViewStateCommand { get { return new MvxCommand (DoRefreshViewState); } }
-		private async void DoRefreshViewState()
-		{
-			await ShowLoadingForLongOperationAsync<bool>(async () => 
-				{
-					NotificationList = await _notificationSvc.GetNotificationListAsync(Settings.LastUsername);
-					return true;
-				});
-		}*/
 
 		#region Commands
 		//public virtual IMvxCommand SyncCommand { get { return null; } }
@@ -91,7 +81,7 @@ namespace MolloOfficina.Core.ViewModels
 					}
 				);
 			}
-			catch (MolloOfficinaOfflineException ex) {
+			catch (MvxAndroidFragmentsTestOfflineException ex) {
 				RaiseGeneralFailEvent (ex);
 			}
 			catch (WebException ex) {
@@ -135,7 +125,7 @@ namespace MolloOfficina.Core.ViewModels
 						RaiseGeneralFailEvent(new MolloOfficinaException(
 							CoreResources.err_logout));
 				}
-				catch (MolloOfficinaOfflineException ex) {
+				catch (MvxAndroidFragmentsTestOfflineException ex) {
 					RaiseGeneralFailEvent (ex);
 				}
 				catch (WebException ex) {
@@ -147,85 +137,6 @@ namespace MolloOfficina.Core.ViewModels
 				
 			}
 		}
-
-		/*private void DoShowNotifications()
-		{
-			ShowMessageBox("Coming soon...", "La funzionalità è attualmente in fase di sviluppo.", null);
-		}*/
-
-		#region NOTIFICATIONS
-		private IList<Notification> _notificationList;
-		public IList<Notification> NotificationList {
-			get { return _notificationList; }
-			set { 
-				if (_notificationList == value)
-					return;
-
-				_notificationList = value;
-				RaiseAllPropertiesChanged ();
-			}
-		}
-
-		public async void DoRefreshNotifications()
-		{
-			try
-			{
-				_notificationSvc = Mvx.Resolve<INotificationService> ();
-
-				await ShowLoadingForLongOperationAsync<bool>(async () => 
-					{
-						NotificationList = await _notificationSvc.GetNotificationListAsync(Settings.LastUsername);
-
-						return true;
-					});
-			}
-			catch (MolloOfficinaOfflineException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (WebException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (Exception ex)
-			{
-				RaiseGeneralFailEvent(ex);
-			}
-		}
-
-		private async void MarkNotificationAsRead(Notification item)
-		{
-			try
-			{
-				if (item.IsRead)
-					return;
-
-				item.IsRead = true;
-
-				ServiceReturn retValue = await LongOperationAsync(async () => await _notificationSvc.MarkAsReadedAsync(item));
-
-				if (retValue.Parameter)
-				{
-					#if ONLINE
-					await WriteDataToCache(NotificationList, Cache.NOTIFICATIONLIST_CACHE_TAG + Settings.LastUsername);
-					#endif
-
-					//Close(this);
-				}
-				else
-					RaiseGeneralFailEvent(new MolloOfficinaException(
-						retValue.ErrorMessages[0]));
-
-			}
-			catch (MolloOfficinaOfflineException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (WebException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (Exception ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-		}
-		#endregion
 	}
 }
 
