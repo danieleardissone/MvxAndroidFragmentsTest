@@ -1,14 +1,9 @@
-using FluentValidation;
 using System;
 using System.Net;
-using Version.Plugin;
 using System.IO;
-using MvvmCross.Plugins.File;
 using MvxAndroidFragmentsTest.Core.Resources;
-using MvxAndroidFragmentsTest.Core.Helpers;
 using MvxAndroidFragmentsTest.Core.Exceptions;
 using MvvmCross.Core.ViewModels;
-using MvxAndroidFragmentsTest.Core.Constants;
 
 namespace MvxAndroidFragmentsTest.Core.ViewModels
 {
