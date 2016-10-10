@@ -1,25 +1,20 @@
 using System;
 using System.Net;
 using Plugin.Permissions.Abstractions;
-using MolloOfficina.Core.Services;
-using MolloOfficina.Core.Data;
+using MvxAndroidFragmentsTest.Core.Services;
+using MvxAndroidFragmentsTest.Core.Data;
 using MvvmCross.Core.ViewModels;
-using MolloOfficina.Core.Exceptions;
-using MolloOfficina.Core.Resources;
-using MolloOfficina.Core.Helpers;
+using MvxAndroidFragmentsTest.Core.Exceptions;
+using MvxAndroidFragmentsTest.Core.Resources;
+using MvxAndroidFragmentsTest.Core.Helpers;
 
 namespace MolloOfficina.Core.ViewModels
 {
 	public class SettingsViewModel : BaseNavigationViewModel
     {
-		//private readonly MvxSubscriptionToken _subscrNotifToken;
-
-		private ISettingsService _settingsSvc = null;
-		//private readonly IMvxFileStore _fileStore;
-
-		public SettingsViewModel (ISettingsService settingsService) : base () //, IProfileOnlineService profileOnlineService) : base()
+		public SettingsViewModel () : base ()
 		{
-			_settingsSvc = settingsService;
+
 		}
 
 		public override void Start ()
@@ -29,17 +24,6 @@ namespace MolloOfficina.Core.ViewModels
 		}
 
 		#region Properties to bind
-		/*private string _syncServer = string.Empty;
-		public string SyncServer
-		{ 
-			get { return _syncServer; }
-			set
-			{
-				if (!SetProperty (ref _syncServer, value))
-					return;
-			}
-		}*/
-
 		private SettingsData _settingsData;
 		public SettingsData SettingsData {
 			get { return _settingsData; }
@@ -55,7 +39,7 @@ namespace MolloOfficina.Core.ViewModels
 
 		#region Commands
 		public IMvxCommand DismissCommand { get { return new MvxCommand (DoDismiss); } }
-		public IMvxCommand DoConfirmCommand { get { return new MvxCommand (DoConfirm); } }
+		//public IMvxCommand DoConfirmCommand { get { return new MvxCommand (DoConfirm); } }
 
 		private void DoDismiss()
 		{
@@ -67,103 +51,6 @@ namespace MolloOfficina.Core.ViewModels
 				RaiseGeneralFailEvent (ex);
 			}
 		}
-
-		private async void DoConfirm()
-		{
-			try
-			{
-                if (!SettingsData.IsModified)
-                    ShowMessageBox(CoreResources.alert_generic_title, CoreResources.alert_notmodified_msg); //, null);
-				else
-				{
-					/*Validate();
-					if (HasErrors)
-					{
-						ShowMessageBox(CoreResources.alert_generic_title, CoreResources.alert_validation_error_msg, null); 
-						return;
-					}*/
-
-					ServiceReturn retValue = null;
-
-                    //retValue = await ShowLoadingForLongOperationAsync(async () => await _settingsSvc.SaveAsync(SettingsData));
-
-                    await ShowLoadingForLongOperationAsync<bool>(async () =>
-                    {
-                        bool res = await CheckRunTimePermissions(Permission.Storage);
-
-                        if (res)
-                        {
-                            retValue = await _settingsSvc.SaveAsync(SettingsData);
-                            return true;
-                        }
-                        else
-                            return false;
-                    });
-
-                    if (retValue == null)
-                        ShowMessageBox("Permessi mancanti", "Per procedere è necessario disporre dei permessi di lettura/scrittura sul device."); //, null);
-
-                    else if (retValue.Parameter)
-					{
-						Close(this);
-					}
-					else
-						RaiseGeneralFailEvent(new MolloOfficinaException(
-							retValue.ErrorMessages[0]));
-					//CoreResources.err_save));
-				}
-			}
-			catch (MolloOfficinaOfflineException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (WebException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (Exception ex) {
-				RaiseGeneralFailEvent(ex);
-			}
-		}
-
-		public override IMvxCommand RefreshViewStateCommand { get { return new MvxCommand (DoRefresh); } }
-		public async void DoRefresh()
-		{
-			try
-			{
-				await ShowLoadingForLongOperationAsync(async () => SettingsData = await _settingsSvc.GetSettingsDataAsync());
-
-                /*await ShowLoadingForLongOperationAsync<bool>(async () =>
-                {
-                    bool res = await CheckRunTimePermissions();
-
-                    if (res)
-                    {
-                        SettingsData = await _settingsSvc.GetSettingsDataAsync();
-                        return true;
-                    }
-                    else
-                        return false;
-                });*/
-
-                SetModified(false);
-				//await ShowLoadingForLongOperationAsync<bool>(async () => MenuItemList = await _menuSvc.GetAllByUserAsync(Settings.LastUsername));
-				//LastSync = "Ultima sincronizzazione: " + SyncLog.ReadTimeLog(ZumeroSync.NAVSERVICE_TITLE);
-			}
-			catch (MolloOfficinaOfflineException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (WebException ex) {
-				RaiseGeneralFailEvent (ex);
-			}
-			catch (Exception ex)
-			{
-				RaiseGeneralFailEvent(ex);
-			}
-		}
 		#endregion
-
-		private void SetModified(bool value)
-		{
-			SettingsData.IsModified = value;
-		}
     }
 }
