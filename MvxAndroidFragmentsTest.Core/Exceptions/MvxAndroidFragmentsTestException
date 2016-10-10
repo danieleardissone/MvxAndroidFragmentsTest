@@ -1,0 +1,22 @@
+using System;
+using System.Diagnostics;
+
+namespace MvxAndroidFragmentsTest.Core.Exceptions
+{
+	public class MvxAndroidFragmentsTestException : Exception
+	{
+		publicMvxAndroidFragmentsTestException() : base()
+		{
+		}
+
+		public MvxAndroidFragmentsTestException(string message) : base (message)
+		{
+			Debug.WriteLine (message);
+		}
+
+		public MvxAndroidFragmentsTestException(string message, Exception innerException) : base (message, innerException)
+		{
+			Debug.WriteLine (message + Environment.NewLine + innerException);
+		}
+	}
+}
