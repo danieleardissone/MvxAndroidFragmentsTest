@@ -1,10 +1,10 @@
 ﻿using Android.Views;
 using Android.OS;
-using MolloOfficina.Droid.Views;
-using MolloOfficina.Core.ViewModels;
+using MvxAndroidFragmentsTest.Droid.Views;
+using MvxAndroidFragmentsTest.Core.ViewModels;
 using MvvmCross.Core.ViewModels;
 
-namespace MolloOfficina.Droid.Views.Fragments
+namespace MvxAndroidFragmentsTest.Droid.Views.Fragments
 {
 	public abstract class BaseNavigationFragment<TViewModel> : BaseFragment<TViewModel> where TViewModel : class, IMvxViewModel
     {
@@ -15,8 +15,8 @@ namespace MolloOfficina.Droid.Views.Fragments
 
 		protected void SetTitle(int aResId)
 		{
-            // TODO: Change title in a different way...
-            Views.BaseActivityView<TViewModel> activ = Activity as Views.BaseActivityView<TViewModel>;
+           	 	// TODO: Change title in a different way...
+            		Views.BaseActivityView<TViewModel> activ = Activity as Views.BaseActivityView<TViewModel>;
 			activ.SetCenteredTitle(aResId);
 		}
 
@@ -48,20 +48,12 @@ namespace MolloOfficina.Droid.Views.Fragments
 		public override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
-
-			/*InputMethodManager manager = (InputMethodManager) GetSystemService(InputMethodService);
-			manager.HideSoftInputFromWindow(etMyEditText.WindowToken, 0);*/
 		}
 
 		public override void OnDestroy()
 		{
 			base.OnDestroy();
 		}
-
-		/*public override void OnAttach(Android.App.Activity activity)
-		{
-			base.OnAttach(activity);
-		}*/
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -82,12 +74,6 @@ namespace MolloOfficina.Droid.Views.Fragments
 		{
 			base.OnDestroyView();
 		}
-
-		/*public override void OnCreateOptionsMenu (IMenu menu, MenuInflater inflater)
-		{
-			inflater.Inflate (Resource.Menu.menu_top_logout, menu);
-			base.OnCreateOptionsMenu (menu, inflater);
-		}*/
 
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
